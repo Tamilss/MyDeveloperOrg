@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Signed Agreement --></value>
+    </caseValues>
+    <fields>
+        <label>画像の URL</label>
+        <name>ImageUrl__c</name>
+    </fields>
+    <fields>
+        <label>画像</label>
+        <name>Image__c</name>
+    </fields>
+    <fields>
+        <label>ページ</label>
+        <name>Page__c</name>
+    </fields>
+    <fields>
+        <label>契約書</label>
+        <name>SIGN_Agreement__c</name>
+        <relationshipLabel>署名済み契約</relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Agreement Page Name --></nameFieldLabel>
+</CustomObjectTranslation>

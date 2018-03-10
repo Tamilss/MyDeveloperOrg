@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActions>
+        <label><!-- EchoSign --></label>
+        <name>EchoSign_Contact_Publisher_Action</name>
+    </quickActions>
+    <webLinks>
+        <label><!-- Send_to_EchoSign --></label>
+        <name>Send_to_EchoSign</name>
+    </webLinks>
+</CustomObjectTranslation>

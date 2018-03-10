@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- EchoSign Chatter Settings --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Post Chatter updates for EchoSign agreements on the related Account record. --></help>
+        <label>取引先レコードの場合に投稿</label>
+        <name>Account_Record_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is canceled. --></help>
+        <label>契約の取り消し時に投稿</label>
+        <name>Agreement_Cancelled_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is declined. --></help>
+        <label>契約の拒否時に投稿</label>
+        <name>Agreement_Declined_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement expires. --></help>
+        <label>契約の期限切れ時に投稿</label>
+        <name>Agreement_Expired_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter updates for EchoSign agreements on the Agreement record. --></help>
+        <label>契約レコードの場合に投稿</label>
+        <name>Agreement_Record_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when reminders are sent. --></help>
+        <label>リマインダーの送信時に投稿</label>
+        <name>Agreement_Reminder_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is sent. --></help>
+        <label>契約の送信時に投稿</label>
+        <name>Agreement_Sent_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post private Chatter message to signer when an agreement needs the signer&apos;s signature. --></help>
+        <label>契約への署名を求める通知を送信</label>
+        <name>Agreement_Sign_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is signed and approved. --></help>
+        <label>契約の署名時または承認時に投稿</label>
+        <name>Agreement_Signed_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is viewed. --></help>
+        <label>契約の表示時に投稿</label>
+        <name>Agreement_Viewed_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter updates for EchoSign agreements on the related Contract record. --></help>
+        <label>契約レコードの場合に投稿</label>
+        <name>Contract_Record_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable this setting to turn on Chatter updates for EchoSign agreements. --></help>
+        <label>EchoSign Chatter の更新を有効にする</label>
+        <name>Enable_Chatter_Integration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter updates for EchoSign agreements on the related Opportunity record. --></help>
+        <label>商談レコードの場合に投稿</label>
+        <name>Opportunity_Record_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when recipient email bounces and is not delivered. --></help>
+        <label>受信者の電子メールが不達の場合に投稿</label>
+        <name>Recipient_Email_Bounced_Post__c</name>
+    </fields>
+</CustomObjectTranslation>

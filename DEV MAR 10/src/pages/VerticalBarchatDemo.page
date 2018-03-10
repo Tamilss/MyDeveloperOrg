@@ -1,0 +1,120 @@
+<apex:page controller="VerticalBarchatController">
+    <apex:includeScript value="{!$Resource.JqueryBasic}"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <body>
+    <style type="text/css">
+    
+       #pop-up {
+          display: none;
+          position: absolute;
+          width: 650px;
+          padding: 10px;
+          background: #eeeeee;
+          color: #000000;
+          border: 1px solid #1a1a1a;
+          font-size: 90%;
+        }
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, Helvetica, sans-serif;
+          background: #000 url(bg-texture.png) repeat;
+          color: #dddddd;
+        }
+        
+        h1, h3 {
+          margin: 0;
+          padding: 0;
+          font-weight: normal;
+        }
+        
+        a {
+          color: #EB067B;
+        }
+        
+        div#container {
+          width: 580px;
+          margin: 100px auto 0 auto;
+          padding: 20px;
+          background: #000;
+          border: 1px solid #1a1a1a;
+        }
+    </style>
+   
+    
+    <script type="text/javascript">
+    function toggleDiv( e,flagit,s) {
+    
+  
+        if(flagit=='1'){
+        $.ajax({ url: s, success: function(data) { 
+        
+
+              $('#pop-up').html(data);
+             $('#pop-up').show()
+             .css('top', e.pageY)
+              .css('left', e.pageX)
+              .appendTo('body');
+           } });   
+          }
+           if(flagit=='0'){
+            $('#pop-up').hide()
+          }
+            
+ 
+   }   
+$(document).ready(function(){
+
+    
+
+});
+</script>
+    <!--$('#but').mouseenter(function (e) {
+         alert('Mouse in');
+         $( 'resultDiv').html('<b>sss</b>'); 
+           $( 'resultDiv').popup();
+         
+        /*var ht = '<div><a href="#">links</a>write what you want<div>';
+        $('#toolsTips').html(ht).show().css({ 'top': (e.clientY + 'px'), 'left': ((e.clientX + 20) + 'px') });*/
+    
+     }).mouseout(function () {
+        
+        alert('Mouse out');
+     });
+     });-->
+
+ 
+  
+ 
+  <apex:form >
+  <apex:pageBlock >
+  <apex:pageBlockSection >
+      <apex:pageBlockSectionItem HelpText="{!$ObjectType.Montly_Sale_New__c.fields.AmexAmtProcessed__c.inlineHelpText}">
+        <apex:outputLabel value="AmexAmtProcessed" for="Amex"/>
+         <apex:outputlink onMouseOver="toggleDiv(event, 1,'/apex/VerticalBarchat?fldName=AnnualRevenue__c')" onMouseOut="toggleDiv(event, 0,'')">{!monthSaleNew.AmexAmtProcessed__c} </apex:outputlink>
+       </apex:pageBlockSectionItem>
+       
+       <apex:pageBlockSectionItem HelpText="{!$ObjectType.Montly_Sale_New__c.fields.AnnualRevenue__c.inlineHelpText}">
+        <apex:outputLabel value="Annual Revenue" for="Amex"/>
+         <apex:outputlink id="Amex" onMouseOver="toggleDiv(event, 1,'/apex/VerticalBarchat?fldName=AnnualRevenue__c')" onMouseOut="toggleDiv(event, 0,'')">{!monthSaleNew.AnnualRevenue__c}</apex:outputlink>
+       </apex:pageBlockSectionItem>
+       
+      <apex:pageBlockSectionItem HelpText="{!$ObjectType.Montly_Sale_New__c.fields.AnnualBankcardSale__c.inlineHelpText}">
+        <apex:outputLabel value="Annual Bankcard Sale" for="Amex"/>
+         <apex:outputlink id="Amex" onMouseOver="toggleDiv(event,1,'/apex/VerticalBarchat?fldName=AnnualBankcardSale__c')" onMouseOut="toggleDiv(event,0,'')">{!monthSaleNew.AnnualBankcardSale__c}</apex:outputlink>
+       </apex:pageBlockSectionItem>
+      
+  </apex:pageBlockSection>
+  
+   <!--  <a href="#" onMouseOver="toggleDiv(1,'/apex/VerticalBarchat?fldName=AmexAmtProcessed__c')" onMouseOut="toggleDiv(0,'')">Amex Amt Processed</a> | 
+      <a href="#" onMouseOver="toggleDiv(1,'/apex/VerticalBarchat?fldName=AnnualRevenue__c')" onMouseOut="toggleDiv(0,'')">Annual revenue</a> | 
+      <a href="#" onMouseOver="toggleDiv(1,'/apex/VerticalBarchat?fldName=AnnualBankcardSale__c')" onMouseOut="toggleDiv(0,'')">Annual Bankcard Sale</a> | 
+      <a href="#" onMouseOver="toggleDiv(1,'/apex/VerticalBarchat?fldName=AverageTicket__c')" onMouseOut="toggleDiv(0,'')">Average Ticket</a> | 
+      <a href="#" onMouseOver="toggleDiv(1,'/apex/VerticalBarchat?fldName=DebitAmtProcessed__c')" onMouseOut="toggleDiv(0,'')">Debit Amt Processed</a> | -->
+
+  </apex:pageBlock>
+  <div id="pop-up">ttt</div>
+    <iframe id="myframe" NAME="myframe" src="about:blank" style="display:none;"  width="750px" height="450px"/>
+    </apex:form>
+    </body>
+</apex:page>

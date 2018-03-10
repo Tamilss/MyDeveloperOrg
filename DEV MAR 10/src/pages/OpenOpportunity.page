@@ -1,0 +1,5 @@
+<apex:page >
+  <script>   
+      window.location.href = 'https://ap1.salesforce.com/00O90000005oAXV';
+  </script>
+</apex:page>

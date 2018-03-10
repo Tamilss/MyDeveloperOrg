@@ -1,0 +1,20 @@
+<apex:page id="showImagePage" standardController="Contact" extensions="ShowPicture" showHeader="false" sidebar="false">
+
+    <style type="text/css">
+        body {background-color : #F3F3EC!important;}
+        .pic {
+            background-color : #F3F3EC;
+            border:2px solid #E3DEB8;
+            height:150px;
+            margin :15px auto;
+            padding:5px;
+            width:175px;
+        }
+    </style>
+    
+    <apex:outputpanel styleClass="pic" id="image" layout="block">
+         <apex:image value="{!URLFOR($Resource.PhotoUpload, '/images/unknownperson.jpg')}" rendered="{!NOT( hasPicture )}" height="100" width="100"/>
+         <apex:image value="/servlet/servlet.FileDownload?file={!file.Id}" rendered="{!hasPicture}" height="150" width="175"/>
+    </apex:outputpanel>
+    
+</apex:page>

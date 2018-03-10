@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- EchoSign Settings Private --></value>
+    </caseValues>
+    <fields>
+        <label>API キー</label>
+        <name>API_Key__c</name>
+    </fields>
+    <fields>
+        <label>ネットワーク範囲 1 セット</label>
+        <name>Network_Range_One_Set__c</name>
+    </fields>
+    <fields>
+        <label>ネットワーク範囲 2 セット</label>
+        <name>Network_Range_Two_Set__c</name>
+    </fields>
+    <fields>
+        <label>セキュリティ共有トークン</label>
+        <name>Security_Shared_Token__c</name>
+    </fields>
+</CustomObjectTranslation>

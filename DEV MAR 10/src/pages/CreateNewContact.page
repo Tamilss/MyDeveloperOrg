@@ -1,0 +1,205 @@
+<apex:page controller="SendEmailtoCustomers"   showHeader="false" sidebar="false" cache="false">    
+    <apex:includeScript value="https://cs11.salesforce.com/jslibrary/1372802930000/sfdc/main.js"/> 
+     
+  
+     <apex:includeScript value="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css"/>
+     <apex:includescript value="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"/>
+     
+    
+    
+    <script type="text/javascript">
+        
+       
+        function validateCustomerFields(zipcode, name,phone,email ) {
+             
+             
+            var lName = document.getElementById(name).value;
+            var lPhone = document.getElementById(phone).value;
+            var lEmail = document.getElementById(email).value;
+            var lZipcode = document.getElementById(zipcode).value;
+            
+            alert(lZipcode );
+            var isValid = true;
+            var errMsg = '';
+            
+            if( lZipcode != '' ) {
+                var zipcodeRegex ='^\\d{5}$';
+                if(!lZipcode.match(zipcodeRegex)) {
+                   
+                    errMsg +="Enter valid zipcode";  
+                    isValid = false;
+                }
+            } 
+                
+            if( lPhone == '' ) {
+           
+                errMsg +="\n"+"Enter Phone number";  
+                isValid = false;
+            } 
+           
+            if( lEmail != '' ) {
+            
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!filter.test(lEmail)) {
+                
+                    errMsg +="\n"+"Enter valid email-id";  
+                    isValid = false;
+                    
+                } 
+            } else {
+                
+                errMsg +="\n"+"Enter the email-id";  
+                isValid = false;
+            }
+            if( lName == '' ) {
+            
+                isValid = false
+               errMsg +="\n"+"Enter the customer name";  
+            }
+            
+           
+            if(isValid == true ) {
+               initiateSave();
+            } else {
+               alert(errMsg );
+            }
+        }
+        
+        function formatPhone( phoneFieldId ) {
+            
+            /* var elementValue = '965-939-6914';
+            var phoneNumberPattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;  
+            alert(phoneNumberPattern.test(elementValue));*/
+            
+            var phoneNo =  document.getElementById( phoneFieldId ).value;  
+            
+            var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;  
+            if( phoneNumberPattern.test( phoneNo )) {
+                
+                var phoneNoStr= phoneNo.replace('(',''); 
+                phoneNoStr = phoneNoStr.replace(")","");
+                phoneNoStr = phoneNoStr.replace("-","");
+                phoneNoStr = phoneNoStr.replace("-","");
+                var str1 = phoneNoStr.substr(0,3);
+                var str2 = phoneNoStr.substr(3,3);
+                var str3 = phoneNoStr.substr(6,4);
+                var resultStr = str1+'-'+str2+'-'+str3;
+                document.getElementById( phoneFieldId ).value = resultStr;
+                return true; 
+            } else {
+                alert("Enter valid phone format"); 
+                return false;    
+            }
+        }
+        
+    </script>
+    <style>
+        body {
+        
+            padding-top: 50px; 
+            padding-left:10%;
+            padding-right:10%;
+            background-image:url("{!URLFOR($Resource.SiteBackgroundImage)}");  
+        }
+       
+         .navbar-fixed-bottom, .navbar-fixed-top {
+            
+            position:initial;
+        }
+        tr {
+            height:30px;
+        }
+        input [type=text] {
+            
+            height:21px;
+            width:180px;
+        }
+        .pbSubheader {
+         
+         background-color:teal;
+     }
+    </style>
+    
+    <apex:form >
+        <c:SendEmailtoCustomers_Header ></c:SendEmailtoCustomers_Header>
+        <apex:pageblock >
+            <apex:pageBlockSection title="Search Customers"   >
+            
+          
+            <table width="100%" border="0" cellspacing="0">        
+                <tr style="">
+                    <td style="width:30%;height:20px;font-size: 14px;border-left: 0px;border-bottom: 0px;"><div style="" >&nbsp;&nbsp;&nbsp;First Name&nbsp;</div></td>
+                    <td style="width:30%;height:20px;border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custFirstName}" style="" />
+                    </td>
+                    <td style="width:40%;height:20px;border-left:0px;border-bottom:0px;"></td>
+                </tr>
+                
+                <tr style="">
+                    <td style="width:30%;height:20px;font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Last Name&nbsp;<b style="color:red;font-size:18px;">*</b></td>
+                    <td style="width:30%;height:20px;border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custLastName}" id="leadName" style=""/>                        
+                    </td>  
+                    <td style="width:40%;height:20px;border-left:0px;border-bottom:0px;"></td>                  
+                </tr>
+               
+                <tr>
+                    <td style="width:30%;height:20px;font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Phone&nbsp;<b style="color:red;font-size:18px;">*</b></td>
+                    <td style="width:30%;height:20px;border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custPhoneNumber}"  onblur="return formatPhone('{!$Component.leadContactNumber}');" id="leadContactNumber" style=""/>
+                    </td> 
+                    <td style="width:40%;height:20px;border-left:0px;border-bottom:0px;"></td>  
+                </tr>
+               
+                <tr style="">
+                    <td style="width:30%;height:20px;font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Email&nbsp;<b style="color:red;font-size:18px;">*</b></td>
+                    <td style="width:30%;height:20px;border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custEmailAdd}" id="leadEmail" style=""/>
+                    </td>
+                    <td style="width:40%;height:20px;border-left:0px;border-bottom:0px;"></td>  
+                </tr>
+               
+                <tr>
+                    <td style="width:30%;height:20px;font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Address</td>
+                    <td style="width:30%;height:20px;border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custStreetAdd}" style=""/>
+                    </td>
+                    <td style="width:40%;height:20px;border-left:0px;border-bottom:0px;"></td>  
+                </tr>
+               
+                <tr >
+                    <td style="width:30%;height:20px;font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;City</td>
+                    <td style="width:30%;height:20px;border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custCity}" style=""/>
+                    </td>
+                    <td style="width:40%;height:20px;border-left:0px;border-bottom:0px;"></td>  
+                </tr>
+               
+                <tr>
+                    <td style="width:30%;height:20px;font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;State</td>
+                    <td style="width:30%;height:20px;border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custState}" style="" />
+                    </td>
+                    <td style="width:40%;height:20px;border-left:0px;border-bottom:0px;"></td>  
+                </tr>
+                
+                <tr>
+                    <td style="width:30%;height:20px;font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Zip</td>
+                    <td style="width:30%;height:20px;border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custZipCode}" id="zipId" style=""/>
+                    </td>
+                    <td style="width:40%;height:20px;border-left:0px;border-bottom:0px;"></td>  
+                </tr> 
+                            
+            </table>
+            </apex:pageBlockSection> 
+            <center> 
+                <input type="button" value="Create" onclick="return validateCustomerFields('j_id0:j_id5:j_id13:j_id14:zipId','j_id0:j_id5:j_id13:j_id14:leadName','j_id0:j_id5:j_id13:j_id14:leadContactNumber','j_id0:j_id5:j_id13:j_id14:leadEmail');"/>
+                <input type="button" value="Cancel" onClick="cancelSearch();" />
+            </center> 
+            </apex:pageBlock>
+            <apex:actionFunction name="initiateSave" action="{!createNewCustomer}" oncomplete="alert('New Customer successfully created.');window.location='{!urlString}';" />
+        <c:SendEmailtoCustomers_Footer ></c:SendEmailtoCustomers_Footer>
+    </apex:form> 
+        
+</apex:page>

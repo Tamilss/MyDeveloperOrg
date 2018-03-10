@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Agreement Template --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Set the Salesforce ID of the account record which the agreement should look up to. --></help>
+        <label>アカウント</label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically send the agreement without displaying the send page. (e.g. triggered workflows) Make sure to add a recipient and a file attachment if using this option. --></help>
+        <label>自動送信</label>
+        <name>Auto_Send__c</name>
+    </fields>
+    <fields>
+        <help><!-- Send automatic reminders to signers. --></help>
+        <label>自動リマインダー</label>
+        <name>Automatic_Reminders__c</name>
+        <picklistValues>
+            <masterLabel>Every Day, Until Signed</masterLabel>
+            <translation><!-- Every Day, Until Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Every Week, Until Signed</masterLabel>
+            <translation><!-- Every Week, Until Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Never</masterLabel>
+            <translation><!-- Never --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- On the Master object record, make this agreement template available to senders via the Chatter Feed EchoSign send for signature action. --></help>
+        <label>発行者のアクションに使用可能</label>
+        <name>Available_Publisher_Actions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Confirm the password that you want the recipient to input. --></help>
+        <label>パスワードを確認</label>
+        <name>Confirm_Password__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set the Salesforce ID of the contract record which the agreement should look up to. --></help>
+        <label>契約</label>
+        <name>Contract__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the data mapping to map EchoSign field inputs from the signed agreement back into Salesforce. --></help>
+        <label>データマッピング</label>
+        <name>Data_Mapping__c</name>
+        <relationshipLabel>契約テンプレート</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Set the number of days before the agreement expires. --></help>
+        <label>有効期限までの日数</label>
+        <name>Days_Until_Expiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set as default template for new agreements. --></help>
+        <label>デフォルト</label>
+        <name>Default__c</name>
+    </fields>
+    <fields>
+        <help><!-- Send copies of the agreement to the specified email addresses. --></help>
+        <label>電子メールのコピーの送信先</label>
+        <name>Email_Copy_To__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ensure that before external signers can view or sign the document, they have to verify their identity. --></help>
+        <label>外部署名者の確認方法</label>
+        <name>External_Signers_Verification_Method__c</name>
+        <picklistValues>
+            <masterLabel>Knowledge based authentication</masterLabel>
+            <translation><!-- Knowledge based authentication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Password to sign agreement</masterLabel>
+            <translation><!-- Password to sign agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web identity authentication</masterLabel>
+            <translation><!-- Web identity authentication --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enable hosted in-person signing. --></help>
+        <label>ホストされる署名を有効にする</label>
+        <name>Hosted_Signing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ensure that before internal signers can view or sign the document, they have to verify their identity. --></help>
+        <label>内部署名者の確認方法</label>
+        <name>Internal_Signers_Verification_Method__c</name>
+        <picklistValues>
+            <masterLabel>Knowledge based authentication</masterLabel>
+            <translation><!-- Knowledge based authentication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Password to sign agreement</masterLabel>
+            <translation><!-- Password to sign agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web identity authentication</masterLabel>
+            <translation><!-- Web identity authentication --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the language of the recipients. --></help>
+        <label>言語</label>
+        <name>Language__c</name>
+        <picklistValues>
+            <masterLabel>Chinese (China)</masterLabel>
+            <translation><!-- Chinese (China) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinese (Taiwan)</masterLabel>
+            <translation><!-- Chinese (Taiwan) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Czech (Czech Republic)</masterLabel>
+            <translation><!-- Czech (Czech Republic) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danish (Denmark)</masterLabel>
+            <translation><!-- Danish (Denmark) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dutch (Netherlands)</masterLabel>
+            <translation><!-- Dutch (Netherlands) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (United Kingdom)</masterLabel>
+            <translation><!-- English (United Kingdom) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (United States)</masterLabel>
+            <translation><!-- English (United States) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finnish (Finland)</masterLabel>
+            <translation><!-- Finnish (Finland) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French (France)</masterLabel>
+            <translation><!-- French (France) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>German (Germany)</masterLabel>
+            <translation><!-- German (Germany) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Icelandic (Iceland)</masterLabel>
+            <translation><!-- Icelandic (Iceland) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indonesian (Indonesia)</masterLabel>
+            <translation><!-- Indonesian (Indonesia) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italian (Italy)</masterLabel>
+            <translation><!-- Italian (Italy) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese (Japan)</masterLabel>
+            <translation><!-- Japanese (Japan) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korean (South Korea)</masterLabel>
+            <translation><!-- Korean (South Korea) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malay (Malaysia)</masterLabel>
+            <translation><!-- Malay (Malaysia) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norwegian (Norway)</masterLabel>
+            <translation><!-- Norwegian (Norway) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Polish (Poland)</masterLabel>
+            <translation><!-- Polish (Poland) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portuguese (Brazil)</masterLabel>
+            <translation><!-- Portuguese (Brazil) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portuguese (Portugal)</masterLabel>
+            <translation><!-- Portuguese (Portugal) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian (Russia)</masterLabel>
+            <translation><!-- Russian (Russia) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish (Spain)</masterLabel>
+            <translation><!-- Spanish (Spain) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swedish (Sweden)</masterLabel>
+            <translation><!-- Swedish (Sweden) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thai (Thailand)</masterLabel>
+            <translation><!-- Thai (Thailand) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkish (Turkey)</masterLabel>
+            <translation><!-- Turkish (Turkey) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vietnamese (Vietnam)</masterLabel>
+            <translation><!-- Vietnamese (Vietnam) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Specify the Salesforce object that will be referenced for this agreement template. (e.g. Opportunity, Lead) --></help>
+        <label>マスタオブジェクトタイプ</label>
+        <name>Master_Object_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the merge mapping to merge Salesforce fields into the EchoSign agreement before it is sent for signature. --></help>
+        <label>結合マッピング</label>
+        <name>Merge_Mapping__c</name>
+        <relationshipLabel>契約テンプレート</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter a message that will be sent to the recipients. --></help>
+        <label>メッセージ</label>
+        <name>Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a name for the agreement. --></help>
+        <label>契約名</label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set the Salesforce ID of the opportunity record which the agreement should look up to. --></help>
+        <label>商談</label>
+        <name>Opportunity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a password that you want the recipient to input. --></help>
+        <label>パスワード</label>
+        <name>Password__c</name>
+    </fields>
+    <fields>
+        <help><!-- When sending an agreement for written signature, use the fax number for the contact if available --></help>
+        <label>Fax 番号を使用</label>
+        <name>Prefer_Fax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable signers to preview and position fields on the document before agreement is sent for signature. --></help>
+        <label>フィールドのプレビューと位置設定を有効にする</label>
+        <name>Preview_Position__c</name>
+    </fields>
+    <fields>
+        <help><!-- When the agreement is auto sent or sent using an automated workflow, the agreement will be sent on behalf of the user specified by this field. If not specified, the current context user will be used as usual. --></help>
+        <label>代理送信</label>
+        <name>Sender_User__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set a password the recipient needs to enter to sign the agreement. --></help>
+        <label>契約に署名するパスワード</label>
+        <name>Sign_Password__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable the sender to also sign the agreement by selecting a signature order. --></help>
+        <label>送信者の署名順</label>
+        <name>Signature_Order__c</name>
+        <picklistValues>
+            <masterLabel>Recipients sign first, then sender signs</masterLabel>
+            <translation><!-- Recipients sign first, then sender signs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sender signs first, then recipients sign</masterLabel>
+            <translation><!-- Sender signs first, then recipients sign --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Send for electronic signature or request written signature returned by fax. --></help>
+        <label>署名タイプ</label>
+        <name>Signature_Type__c</name>
+        <picklistValues>
+            <masterLabel>Written Signature</masterLabel>
+            <translation><!-- Written Signature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>e-Signature</masterLabel>
+            <translation><!-- e-Signature --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- - - DEPRECATED - Do Not Use- -  --></help>
+        <label>-- 廃止 - 使用しないでください --</label>
+        <name>Suggest_Revisions__c</name>
+    </fields>
+    <fields>
+        <help><!-- The signed PDF that is sent to all parties is encrypted and this password will be required to open it. Don&apos;t lose the password as it is not recoverable. --></help>
+        <label>署名済み文書をパスワードで保護</label>
+        <name>View_Password__c</name>
+    </fields>
+    <layouts>
+        <layout>Agreement Template Layout</layout>
+        <sections>
+            <label><!-- Agreement Information --></label>
+            <section>Agreement Information</section>
+        </sections>
+        <sections>
+            <label><!-- Agreement Options --></label>
+            <section>Agreement Options</section>
+        </sections>
+        <sections>
+            <label><!-- Agreement Security Options --></label>
+            <section>Agreement Security Options</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Mapping Settings --></label>
+            <section>Mapping Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Referenced Objects --></label>
+            <section>Referenced Objects</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Agreement Template Name --></nameFieldLabel>
+    <validationRules>
+        <errorMessage>確認入力のパスワードが、受信者の入力用パスワードと一致しません。</errorMessage>
+        <name>Confirm_Password</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>受信者の入力用パスワードを入力します。</errorMessage>
+        <name>Enabled_Password_Set</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>文書の有効期間は最大 180 日です。</errorMessage>
+        <name>Maximum_Expiration_Days</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>署名済み署名では、改訂の提案を使用できません。</errorMessage>
+        <name>Written_Without_Revisions</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,11 @@
+<apex:page controller="PayTraceController" action="{!getResponse}">
+<script>
+    alert(window.location.toString());
+</script>
+  <textarea name="payload" style="width:500px;height=400px;">{!cxml}</textarea>
+
+<form>
+    
+</form>
+   
+</apex:page>

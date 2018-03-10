@@ -1,0 +1,10 @@
+<apex:page controller="MyController"> 
+    <apex:form >
+        <html>    
+            <apex:pageBlock title="Retrieving Query String Parameters">
+               <left><apex:commandButton value="View" action="viewrecords"/></left>
+                <!--You are viewing the {!account.name} account.-->
+            </apex:pageBlock>
+        </html>
+    </apex:form>
+</apex:page>

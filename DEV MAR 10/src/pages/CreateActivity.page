@@ -1,0 +1,8 @@
+<apex:page controller="SendEmailtoCustomers" action="{!createActivity}">
+
+    <apex:outputPanel rendered="{!ShowAtyStatus}">
+        
+        <div>Our Sales Rep contact with you soon. Thanks!</div>
+    </apex:outputPanel>
+  
+</apex:page>

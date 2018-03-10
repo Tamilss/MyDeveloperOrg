@@ -1,0 +1,26 @@
+<apex:page >
+  
+  <script>
+      function toggleDiv( flagit,s) {
+          
+          var objFrame;
+         
+          if(flagit=='1'){
+              objFrame= document.getElementById('myframe'); 
+              objFrame.src = s;
+              objFrame.style.display = 'block';
+          }
+          if(flagit=='0'){
+            objFrame =document.getElementById('myframe').style.display='none'; 
+          }
+      }
+  </script>
+  <apex:pageBlock >
+      <a href="#" onMouseOver="toggleDiv(1,'/apex/HorizontalBarchat?fldName=AmexAmtProcessed')" onMouseOut="toggleDiv(0,'')">Amex Amt Processed</a> | 
+      <a href="#" onMouseOver="toggleDiv(1,'/apex/HorizontalBarchat?fldName=AnnualRevenue')" onMouseOut="toggleDiv(0,'')">Annual revenue</a> | 
+
+
+  </apex:pageBlock>
+    <iframe id="myframe" NAME="myframe" src="about:blank" style="display:none;"  width="750px" height="450px"/>
+
+</apex:page>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign User Sync Result</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign User Sync Results</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current Group Name --></label>
+        <name>Current_Group_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job ID --></label>
+        <name>Job_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Group Name --></label>
+        <name>Prior_Group_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profile Name --></label>
+        <name>Profile_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Success --></label>
+        <name>Success__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Full Name --></label>
+        <name>User_Full_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

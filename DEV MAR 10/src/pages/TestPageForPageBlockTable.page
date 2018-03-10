@@ -1,0 +1,86 @@
+<apex:page controller="TestPageForPageBlockTable">
+    
+    <script>
+    function IsDirty(form) {
+        
+        alert('hai');
+        var r;
+        var isChanged = true;
+        for (var i=0; i<form.elements.length; i++) {
+            
+            alert('hai'+i);
+            alert(form.elements.length);
+            var field = form.elements[i];
+            switch (field.type) {
+                case "select-multiple":
+                case "select-one":
+                    var options = field.options;
+                    for (var j=0; j<options.length; j++) {
+                        if(options[j].selected != options[j].defaultSelected) {
+                        
+                            isChanged = true;
+                        }
+
+
+                    }
+                    
+                    break;
+                case "text":
+                case "file":
+                case "password":
+                    if (field.value != field.defaultValue) {
+                        isChanged = true;
+                    }
+                    break;
+                case "checkbox":
+                case "radio":
+                    if (field.checked != field.defaultChecked) {
+                        
+                        isChanged = true;
+                    }
+                    break;
+            }
+        }
+        if( isChanged == true ) {
+            
+
+            r = confirm("You have modifield form.Would yould like to save")
+            if( r == true ) {
+                
+                alert('Save successfully');
+            }
+        }
+    
+    }
+    function validate(Name) {
+        
+        alert(Name);
+    }
+    </script>
+    <apex:form >
+    
+      
+      <apex:pageBlock >
+          <apex:outputLabel for="forName" value="Name"/>
+          <apex:inputText value="{!Name}" id="forName" onmouseout="valitate()"/>
+           <apex:pageBlockSection title="Details" >
+          <apex:pageBlockTable value="{!accList}" var="accRec" width="1000%" columns="3">
+              
+              <apex:column width="60%" >
+                  <apex:inputField value="{!accRec.Id}"/>
+              </apex:column>
+              <apex:column width="30%">
+                  
+                  <apex:inputField value="{!accRec.Name}"/>
+              </apex:column>
+              <apex:column width="30%">
+              
+                  <apex:inputField value="{!accRec.Type}"/>
+              </apex:column>
+          </apex:pageBlockTable>
+          </apex:pageBlockSection>
+          <apex:commandButton value="Save" onclick="validate('{!Name}');"  />
+      </apex:pageBlock>
+   </apex:form>
+  
+</apex:page>

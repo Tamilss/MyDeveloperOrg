@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- EchoSign Merge Mapping --></value>
+    </caseValues>
+    <fields>
+        <label>キャッシュ済み入力タイプ</label>
+        <name>Cached_Input_Type__c</name>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation><!-- List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation><!-- Text --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check this box if you want this merge mapping to run by default for all agreements sent. You can override the default if you specify a different merge mapping to use with a specific agreement or agreement template. --></help>
+        <label>デフォルトの結合マッピング？</label>
+        <name>Default__c</name>
+    </fields>
+    <fields>
+        <label>説明</label>
+        <name>Description__c</name>
+    </fields>
+    <layouts>
+        <layout>EchoSign Merge Mapping Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- EchoSign Merge Mapping Name --></nameFieldLabel>
+</CustomObjectTranslation>

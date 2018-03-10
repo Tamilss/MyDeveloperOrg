@@ -1,0 +1,15 @@
+<apex:page standardController="Orders__x" extensions="externalObjectDemo"><apex:form >
+<apex:pageBlock >
+
+<apex:pageBlockSection title="Order Details">
+    <apex:pageBlockTable value="{!ordDetails12}" var="ss">
+
+        <apex:column value="{!ss.ExternalId}"/>
+        <apex:column value="{!ss.Discount__c}"/>
+        <apex:column value="{!ss.OrderID__c}"/>
+    </apex:pageBlockTable>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Add File Attachment --></value>
+    </caseValues>
+    <fields>
+        <label>契約テンプレート</label>
+        <name>Agreement_Template__c</name>
+        <relationshipLabel>添付ファイルを追加</relationshipLabel>
+    </fields>
+    <fields>
+        <label>添付文書</label>
+        <name>Attachment_Document_Names__c</name>
+    </fields>
+    <fields>
+        <label>添付文書 ID</label>
+        <name>Attachment_Document__c</name>
+    </fields>
+    <fields>
+        <label>選択の決定者</label>
+        <name>Attachment_Selection_Field__c</name>
+        <picklistValues>
+            <masterLabel>Created Date</masterLabel>
+            <translation><!-- Created Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Modified Date</masterLabel>
+            <translation><!-- Last Modified Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>マスタオブジェクトからのファイル選択</label>
+        <name>Attachment_Selection_Type__c</name>
+        <picklistValues>
+            <masterLabel>All Documents</masterLabel>
+            <translation><!-- All Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latest Document</masterLabel>
+            <translation><!-- Latest Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldest Document</masterLabel>
+            <translation><!-- Oldest Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>索引</label>
+        <name>Index__c</name>
+    </fields>
+    <fields>
+        <label>見積書の選択の決定者</label>
+        <name>Quote_Document_Selection_Field__c</name>
+        <picklistValues>
+            <masterLabel>Created Date</masterLabel>
+            <translation><!-- Created Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Modified Date</masterLabel>
+            <translation><!-- Last Modified Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>見積からの見積書の選択</label>
+        <name>Quote_Document_Selection_Type__c</name>
+        <picklistValues>
+            <masterLabel>All Documents</masterLabel>
+            <translation><!-- All Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latest Document</masterLabel>
+            <translation><!-- Latest Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldest Document</masterLabel>
+            <translation><!-- Oldest Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>見積の選択の決定者</label>
+        <name>Quote_Selection_Field__c</name>
+        <picklistValues>
+            <masterLabel>Created Date</masterLabel>
+            <translation><!-- Created Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Modified Date</masterLabel>
+            <translation><!-- Last Modified Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>商談からの見積の選択</label>
+        <name>Quote_Selection_Type__c</name>
+        <picklistValues>
+            <masterLabel>Latest Quote</masterLabel>
+            <translation><!-- Latest Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldest Quote</masterLabel>
+            <translation><!-- Oldest Quote --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>関連する受信者の関係</label>
+        <name>Related_Recipient_Relationship__c</name>
+    </fields>
+    <fields>
+        <label>関連する選択フィールド</label>
+        <name>Related_Selection_Field__c</name>
+        <picklistValues>
+            <masterLabel>Created Date</masterLabel>
+            <translation><!-- Created Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Modified Date</masterLabel>
+            <translation><!-- Last Modified Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>関連する選択タイプ</label>
+        <name>Related_Selection_Type__c</name>
+        <picklistValues>
+            <masterLabel>Latest</masterLabel>
+            <translation><!-- Latest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldest</masterLabel>
+            <translation><!-- Oldest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>添付ファイルタイプ</label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Document from Content</masterLabel>
+            <translation><!-- Document from Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document from Library</masterLabel>
+            <translation><!-- Document from Library --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document from Master Object</masterLabel>
+            <translation><!-- Document from Master Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Document from Master Quote</masterLabel>
+            <translation><!-- Quote Document from Master Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Document from Opportunity Quote</masterLabel>
+            <translation><!-- Quote Document from Opportunity Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Runtime Variable</masterLabel>
+            <translation><!-- Runtime Variable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>変数名</label>
+        <name>Variable_Name__c</name>
+    </fields>
+    <layouts>
+        <layout>Add File Attachment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Attachment Template Name --></nameFieldLabel>
+</CustomObjectTranslation>

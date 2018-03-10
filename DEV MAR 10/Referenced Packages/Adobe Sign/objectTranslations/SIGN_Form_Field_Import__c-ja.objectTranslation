@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- EchoSign Form Field Import --></value>
+    </caseValues>
+    <fields>
+        <label>契約書</label>
+        <name>Agreement__c</name>
+        <relationshipLabel>EchoSign フォームフィールドのインポート</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Salesforce から EchoSign へのデータマッピング</label>
+        <name>Data_Mapping__c</name>
+        <relationshipLabel>EchoSign フォームフィールドのインポート</relationshipLabel>
+    </fields>
+    <fields>
+        <label>文書キー</label>
+        <name>Document_Key__c</name>
+    </fields>
+    <fields>
+        <label>重複するフォームフィールド</label>
+        <name>Duplicate_Form_Fields__c</name>
+    </fields>
+    <fields>
+        <label>フォームフィールド</label>
+        <name>Form_Fields__c</name>
+    </fields>
+    <fields>
+        <label>タイプ</label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Agreement</masterLabel>
+            <translation><!-- Agreement --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>EchoSign Form Field Import Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- EchoSign Form Field Import Name --></nameFieldLabel>
+</CustomObjectTranslation>

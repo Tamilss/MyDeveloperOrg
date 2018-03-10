@@ -1,0 +1,7 @@
+<apex:page standardController="Account">
+ 	<apex:form >
+ 		<apex:PageBlock >
+ 			<apex:inputField value="{!account.Name}"/>
+ 		</apex:PageBlock>
+ 	</apex:form> 
+</apex:page>

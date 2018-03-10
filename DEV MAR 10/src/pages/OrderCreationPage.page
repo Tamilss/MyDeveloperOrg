@@ -1,0 +1,285 @@
+<apex:page controller="OrderCreationController" sidebar="false" standardStylesheets="true" showHeader="false">
+    
+    <script type="text/javascript">
+        
+       
+        function validateOrder(zipcode, name,phone,email ) {
+             
+             
+            var lName = document.getElementById(name).value;
+            var lPhone = document.getElementById(phone).value;
+            var lEmail = document.getElementById(email).value;
+            var lZipcode = document.getElementById(zipcode).value;
+            
+            alert(lZipcode );
+            var isValid = true;
+            var errMsg = '';
+            
+            if( lZipcode != '' ) {
+                var zipcodeRegex ='^\\d{5}$';
+                if(!lZipcode.match(zipcodeRegex)) {
+                   
+                    errMsg +="Enter valid zipcode";  
+                    isValid = false;
+                }
+            } 
+                
+            if( lPhone == '' ) {
+           
+                errMsg +="\n"+"Enter Phone number";  
+                isValid = false;
+            } 
+           
+            if( lEmail != '' ) {
+            
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!filter.test(lEmail)) {
+                
+                    errMsg +="\n"+"Enter valid email-id";  
+                    isValid = false;
+                    
+                } 
+            } else {
+                
+                errMsg +="\n"+"Enter the email-id";  
+                isValid = false;
+            }
+            if( lName == '' ) {
+            
+                isValid = false
+               errMsg +="\n"+"Enter the customer name";  
+            }
+            
+           
+            if(isValid == true ) {
+               initiateSave();
+            } else {
+               alert(errMsg );
+            }
+        }
+        
+        function formatPhone( phoneFieldId ) {
+            
+            /* var elementValue = '965-939-6914';
+            var phoneNumberPattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;  
+            alert(phoneNumberPattern.test(elementValue));*/
+            
+            var phoneNo =  document.getElementById( phoneFieldId ).value;  
+            
+            var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;  
+            if( phoneNumberPattern.test( phoneNo )) {
+                
+                var phoneNoStr= phoneNo.replace('(',''); 
+                phoneNoStr = phoneNoStr.replace(")","");
+                phoneNoStr = phoneNoStr.replace("-","");
+                phoneNoStr = phoneNoStr.replace("-","");
+                var str1 = phoneNoStr.substr(0,3);
+                var str2 = phoneNoStr.substr(3,3);
+                var str3 = phoneNoStr.substr(6,4);
+                var resultStr = str1+'-'+str2+'-'+str3;
+                document.getElementById( phoneFieldId ).value = resultStr;
+                return true; 
+            } else {
+                alert("Enter valid phone format"); 
+                return false;    
+            }
+        }
+        
+    </script>
+    <style>
+        
+        
+        tr {
+            height:45px;
+        }
+        td {
+            
+            width:20%;
+        {
+        input [type=text] {
+            
+            height:45px;
+            margin-top:10px;
+            width:180px;
+        }
+        body {
+        
+        padding-top: 50px; 
+        padding-left:10%;
+        padding-right:10%;
+        background-image:url("{!URLFOR($Resource.SiteBackgroundImage)}");  
+    }
+     .apexp .bPageBlock.apexDefaultPageBlock .pbBody {
+         
+         margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+     }
+     .pbSubheader {
+         
+         background-color:teal;
+     }
+        .pbBody {
+            
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            background-color: aliceblue;
+        }
+        .apexp{
+            
+            width:100%;
+             margin-top: 20px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+         .navbar-fixed-bottom, .navbar-fixed-top {
+            
+            position:initial;
+        }
+       
+        tr {
+            height:45px;
+        }
+        td {
+            top:8px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        #resultPanel th {
+        
+            text-align:center;
+            background-color:#e6e6e6;
+        }
+        #resultPanel table, td, th {
+            border: 1px solid black;
+            text-align:center;
+        }
+       
+    </style>
+    
+    <apex:form >
+
+        <apex:pageBlock >
+            <apeX:pageBlockSection title="New Order Creation" ></apeX:pageBlockSection>
+          
+            <table width="100%" border="0" cellspacing="0">        
+                <tr style="">
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;"><div style="" >&nbsp;&nbsp;&nbsp;First Name&nbsp;</div></td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custFirstName}" style="" />
+                    </td>
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>
+                     
+                    
+                </tr>
+                
+                <tr style="">
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Last Name&nbsp;<b style="color:red;font-size:18px;">*</b></td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!custLastName}" id="leadName" style=""/>                        
+                    </td>  
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>     
+                    <td></td>             
+                </tr>
+               
+                <tr>
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Phone&nbsp;<b style="color:red;font-size:18px;">*</b></td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!opp.Customer_Phone__c}"  onblur="return formatPhone('{!$Component.leadContactNumber}');" id="leadContactNumber" style=""/>
+                    </td> 
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>  
+                    <td></td>
+                </tr>
+               
+                <tr style="">
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Email&nbsp;<b style="color:red;font-size:18px;">*</b></td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!opp.Email__c}" id="leadEmail" style=""/>
+                    </td>
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td> 
+                    <td></td> 
+                </tr>
+               
+                <tr>
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Shipping Address</td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!opp.Street_Address__c}" style=""/>
+                    </td>
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>  
+                    <td></td>
+                </tr>
+               
+                <tr >
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Shipping City</td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!opp.City__c}" style=""/>
+                    </td>
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>  
+                    <td></td>
+                </tr>
+               
+                <tr>
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Shipping State</td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!opp.State__c}" style="" />
+                    </td>
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>  
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Shipping Zip</td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!opp.Postal_Code__c}" id="zipId" style=""/>
+                    </td>
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>  
+                    <td></td>
+                </tr> 
+                
+                 <tr>
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;No Of Quantity</td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputText value="{!opp.TotalOpportunityQuantity}" id="noofQty" style=""/>
+                    </td>
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>  
+                    <td></td>
+                </tr> 
+                
+                 <tr>
+                    <td style="font-size: 14px;border-left: 0px;border-bottom: 0px;">&nbsp;&nbsp;&nbsp;Delivery Date</td>
+                    <td style="border-left: 0px;border-bottom: 0px;">
+                        <apex:inputfield value="{!opp.Delivery_Date__c}" id="delDate" style="width: 170px;"/>
+                    </td>
+                    <td style="height:20px;border-left:0px;border-bottom:0px;"></td>  
+                    <td></td>
+                </tr> 
+                
+               
+                                   
+            </table>
+
+            <table>
+                <td style="width:15%;">
+                                          
+                </td>
+                <td style="width:15%;" >
+                     <input type="button" value="Create" onclick="return validateOrder('j_id0:j_id2:j_id3:zipId','j_id0:j_id2:j_id3:leadName','j_id0:j_id2:j_id3:leadContactNumber','j_id0:j_id2:j_id3:leadEmail');"/>
+                    <input type="button" value="Cancel" onClick="cancelSearch();"/>
+                </td>
+                    
+                <td style="width:15%;">
+                </td>
+                <td style="width:15%;"></td>
+                </table>
+            </apex:pageBlock>
+            <apex:actionFunction name="initiateSave" action="{!createNewOrder}" oncomplete="alert('New Order successfully created.');window.location='{!urlString}';" />
+
+    </apex:form> 
+        
+ 
+</apex:page>

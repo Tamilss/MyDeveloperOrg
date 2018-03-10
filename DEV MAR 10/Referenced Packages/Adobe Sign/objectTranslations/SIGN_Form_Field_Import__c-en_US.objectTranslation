@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign Form Field Import</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign Form Field Imports</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agreement --></label>
+        <name>Agreement__c</name>
+        <relationshipLabel><!-- EchoSign Form Field Imports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Salesforce to EchoSign Data Mapping --></label>
+        <name>Data_Mapping__c</name>
+        <relationshipLabel><!-- EchoSign Form Field Imports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Document Key --></label>
+        <name>Document_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duplicate Form Fields --></label>
+        <name>Duplicate_Form_Fields__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Fields --></label>
+        <name>Form_Fields__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Agreement</masterLabel>
+            <translation><!-- Agreement --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>EchoSign Form Field Import Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Signed Agreement</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Signed Agreement</value>
+    </caseValues>
+    <fields>
+        <label><!-- Image URL --></label>
+        <name>ImageUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image --></label>
+        <name>Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Page --></label>
+        <name>Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement --></label>
+        <name>SIGN_Agreement__c</name>
+        <relationshipLabel><!-- Signed Agreement --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

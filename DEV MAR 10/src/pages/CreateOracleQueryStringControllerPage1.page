@@ -1,0 +1,27 @@
+<apex:page controller="CreateOracleQueryStringController1">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageMessages />
+            <apex:pageBlockSection title="Salesforce Object" columns="1">
+                     <apex:pageBlockSectionItem >
+                         <apex:outputPanel >
+                         <apex:outputLabel value="Enter Salesforce Object's API Name"/>&nbsp;&nbsp;
+                         <apex:inputText value="{!selectedObject}" id="text" style="width:70%;"/>&nbsp;&nbsp;
+                         <apex:commandButton value="Generate SQL" action="{!submit}" />
+                         </apex:outputPanel>
+                     </apex:pageBlockSectionItem>
+                  <apex:repeat value="{!oracleQueryStringList}" var="querystring">
+                      <apex:pageBlockSectionItem id="pag" rendered="{!NOT(ISBLANK(querystring))}">
+                         <apex:outputLabel value="{!querystring.SFObjectName}" />
+                         <apex:inputTextarea value="{!querystring.SFObjectOraclequeryString}"  rows="13" cols="100" readonly="true"/>
+                     </apex:pageBlockSectionItem>
+                 </apex:repeat>
+            </apex:pageBlockSection>
+            <!--
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Generate SQL" action="{!submit}" />  
+                </apex:pageBlockButtons> 
+            -->    
+        </apex:pageBlock>
+    </apex:form>
+  </apex:page>

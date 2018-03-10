@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- EchoSign Push Mapping Settings --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Should EchoSign copy the first Contact recipient’s Account lookup to the Agreement’s Account lookup? --></help>
+        <label>取引先責任者をコピー</label>
+        <name>Copy_Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- Should EchoSign copy the first Contact recipient’s Opportunity lookup to the Agreement’s Opportunity lookup? --></help>
+        <label>取引先責任者の商談をコピー</label>
+        <name>Copy_Opportunity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies which Recipient type to create (Contact / Lead) in case no existing recipients (as specified in the Recipient Lookup Order) were found. --></help>
+        <label>受信者オブジェクトを自動作成</label>
+        <name>Create_If_Not_Found__c</name>
+    </fields>
+    <fields>
+        <help><!-- If a recipient email address belongs to one of these email domains, no Recipient Object matching (as specified in the Recipient Lookup Order) will be performed and the recipient will be stored as email address. --></help>
+        <label>受信者参照ドメインの無視一覧</label>
+        <name>Recipient_Email_Domain_Ignore_List__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines the order for searching for a matching Recipient Object. E.g. If the value of this setting is ‘Contact, Lead, User’,  we will first try finding a Contact with the recipient’s email address, then a Lead and then a User. --></help>
+        <label>受信者の参照順</label>
+        <name>Recipient_Types__c</name>
+    </fields>
+</CustomObjectTranslation>

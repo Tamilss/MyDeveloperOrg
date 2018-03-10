@@ -1,0 +1,5 @@
+<apex:page controller="TestInputFileUsingAccount" cache="true" contentType="text/csv#{!fileName}" language="en-US">"Name","Id"
+<apex:repeat value="{!accountList}" var="a">
+"{!a.Name}","{!a.Id}"
+</apex:repeat>
+</apex:page>

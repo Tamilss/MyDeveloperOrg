@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign Form Field Mapping Entry</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign Form Field Mapping Entries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Disable --></label>
+        <name>Disable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field --></label>
+        <name>Field_Reference_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form Field Mapping --></label>
+        <name>Form_Field_Mapping__c</name>
+        <relationshipLabel><!-- EchoSign Form Field Mapping Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Index --></label>
+        <name>Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Object_Reference_Path__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Constant</masterLabel>
+            <translation><!-- Constant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Object Field</masterLabel>
+            <translation><!-- Salesforce Object Field --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <layouts>
+        <layout>EchoSign Form Field Mapping Entry Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

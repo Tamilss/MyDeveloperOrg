@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign Data Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign Data Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Cached Input Type --></label>
+        <name>Cached_Input_Type__c</name>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation><!-- List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation><!-- Text --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check this box if you want this data mapping to run by default for all agreements sent. You can override the default if you specify a different data mapping to use with a specific agreement or agreement template. --></help>
+        <label><!-- Default Data Mapping? --></label>
+        <name>Default_Data_Mapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Field CSV --></label>
+        <name>Merge_Field_CSV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notify User of Errors --></label>
+        <name>Notify_User_of_Errors__c</name>
+        <relationshipLabel><!-- EchoSign Data Mappings --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Process Template Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

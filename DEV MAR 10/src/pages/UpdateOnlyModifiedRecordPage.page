@@ -1,0 +1,35 @@
+<apex:page controller="UpdateOnlyModifiedRecord">
+     <apex:form >
+         <apex:pageBlock >
+             <apex:dataTable value="{!toBeUpdatedContactList}" var="updatedRec">
+                 
+                <apex:column > 
+                    
+                    <apex:facet name="header">First Name</apex:facet>
+                    <apex:inputField value="{!updatedRec.FirstName}"/>
+                </apex:column>
+                <apex:column > 
+                    
+                    <apex:facet name="header">Last Name</apex:facet>
+                    <apex:inputField value="{!updatedRec.LastName}"/>
+                </apex:column>
+                <apex:column > 
+                    
+                    <apex:facet name="header">Account</apex:facet>
+                    <apex:inputField value="{!updatedRec.AccountID}"/>
+                </apex:column>
+                <apex:column > 
+                    
+                    <apex:facet name="header">Level</apex:facet>
+                    <apex:inputField value="{!updatedRec.Level__c}"/>
+                </apex:column>
+                
+               <!-- <apex:column value="{!updatedRec.AccountId }"/> 
+                <apex:column value="{!updatedRec.LastName}"/> 
+                <apex:column value="{!updatedRec.Level__c}"/> -->
+                
+             </apex:dataTable>
+         </apex:pageBlock>
+         <apex:commandButton value="Save" action="{!save}"/>
+     </apex:form>
+</apex:page>

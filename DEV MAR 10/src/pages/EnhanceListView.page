@@ -1,0 +1,5 @@
+<apex:page controller="CaseList">
+    <apex:repeat value="{!cases}" var="c">
+        <apex:outputText value="{!c.Id}"/>
+    </apex:repeat>
+</apex:page>

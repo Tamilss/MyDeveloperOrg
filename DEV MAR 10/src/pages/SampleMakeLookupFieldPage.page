@@ -1,0 +1,13 @@
+<apex:page standardController="Account" extensions="SampleController">
+    <apex:form >    
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputField value="{!account.End_Customer_Account__c}"/>
+                <apex:outputText value="{!val}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Submit" action="{!submitvalue}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>    
+    </apex:form> 
+</apex:page>

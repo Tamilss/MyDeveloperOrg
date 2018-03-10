@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Add File Attachment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Add File Attachments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agreement Template --></label>
+        <name>Agreement_Template__c</name>
+        <relationshipLabel><!-- Add File Attachments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Attachment Documents --></label>
+        <name>Attachment_Document_Names__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attachment Document ID&apos;s --></label>
+        <name>Attachment_Document__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selection Determined By --></label>
+        <name>Attachment_Selection_Field__c</name>
+        <picklistValues>
+            <masterLabel>Created Date</masterLabel>
+            <translation><!-- Created Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Modified Date</masterLabel>
+            <translation><!-- Last Modified Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Selection from Master Object --></label>
+        <name>Attachment_Selection_Type__c</name>
+        <picklistValues>
+            <masterLabel>All Documents</masterLabel>
+            <translation><!-- All Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latest Document</masterLabel>
+            <translation><!-- Latest Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldest Document</masterLabel>
+            <translation><!-- Oldest Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Index --></label>
+        <name>Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Document Selection Determined By --></label>
+        <name>Quote_Document_Selection_Field__c</name>
+        <picklistValues>
+            <masterLabel>Created Date</masterLabel>
+            <translation><!-- Created Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Modified Date</masterLabel>
+            <translation><!-- Last Modified Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quote Document Selection from Quote --></label>
+        <name>Quote_Document_Selection_Type__c</name>
+        <picklistValues>
+            <masterLabel>All Documents</masterLabel>
+            <translation><!-- All Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latest Document</masterLabel>
+            <translation><!-- Latest Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldest Document</masterLabel>
+            <translation><!-- Oldest Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quote Selection Determined By --></label>
+        <name>Quote_Selection_Field__c</name>
+        <picklistValues>
+            <masterLabel>Created Date</masterLabel>
+            <translation><!-- Created Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Modified Date</masterLabel>
+            <translation><!-- Last Modified Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quote Selection from Opportunity --></label>
+        <name>Quote_Selection_Type__c</name>
+        <picklistValues>
+            <masterLabel>Latest Quote</masterLabel>
+            <translation><!-- Latest Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldest Quote</masterLabel>
+            <translation><!-- Oldest Quote --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Related Recipient Relationship --></label>
+        <name>Related_Recipient_Relationship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Selection Field --></label>
+        <name>Related_Selection_Field__c</name>
+        <picklistValues>
+            <masterLabel>Created Date</masterLabel>
+            <translation><!-- Created Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Modified Date</masterLabel>
+            <translation><!-- Last Modified Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Related Selection Type --></label>
+        <name>Related_Selection_Type__c</name>
+        <picklistValues>
+            <masterLabel>Latest</masterLabel>
+            <translation><!-- Latest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldest</masterLabel>
+            <translation><!-- Oldest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Attachment Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Document from Content</masterLabel>
+            <translation><!-- Document from Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document from Library</masterLabel>
+            <translation><!-- Document from Library --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document from Master Object</masterLabel>
+            <translation><!-- Document from Master Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Document from Master Quote</masterLabel>
+            <translation><!-- Quote Document from Master Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Document from Opportunity Quote</masterLabel>
+            <translation><!-- Quote Document from Opportunity Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Runtime Variable</masterLabel>
+            <translation><!-- Runtime Variable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Variable Name --></label>
+        <name>Variable_Name__c</name>
+    </fields>
+    <layouts>
+        <layout>Add File Attachment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

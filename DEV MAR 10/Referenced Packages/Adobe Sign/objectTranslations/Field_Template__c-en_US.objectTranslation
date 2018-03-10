@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Map Data into Agreement Field</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Map Data into Agreement Fields</value>
+    </caseValues>
+    <fields>
+        <help><!-- Select Target Agreement Field. --></help>
+        <label><!-- Target Agreement Field --></label>
+        <name>Agreement_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Template --></label>
+        <name>Agreement_Template__c</name>
+        <relationshipLabel><!-- Map Data into Agreement Fields --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Input a value for the target field. --></help>
+        <label><!-- Target Field Value --></label>
+        <name>Constant_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select a field from the master object to be the source field. --></help>
+        <label><!-- Select Source Field from Master Object --></label>
+        <name>Field_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mapping Method --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Input Specific Value</masterLabel>
+            <translation><!-- Input Specific Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Select Master Object Field</masterLabel>
+            <translation><!-- Select Master Object Field --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Map Data into Agreement Field Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

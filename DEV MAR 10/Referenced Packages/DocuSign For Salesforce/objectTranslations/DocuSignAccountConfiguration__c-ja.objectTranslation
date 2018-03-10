@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign アカウント設定</value>
+    </caseValues>
+    <fields>
+        <label>アカウント ID</label>
+        <name>AccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Links Undo And Send --></label>
+        <name>ChatterActionsUndoAndSend__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ完成済み通信テキスト</label>
+        <name>ChatterEnvCompletedText__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ完成済み通信</label>
+        <name>ChatterEnvCompleted__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ却下済み通信テキスト</label>
+        <name>ChatterEnvDeclinedText__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ却下済み通信</label>
+        <name>ChatterEnvDeclined__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ配信済み通信テキスト</label>
+        <name>ChatterEnvDeliveredText__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ配信済み通信</label>
+        <name>ChatterEnvDelivered__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ送信済み通信テキスト</label>
+        <name>ChatterEnvSentText__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ送信済み通信</label>
+        <name>ChatterEnvSent__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ無効化済み通信テキスト</label>
+        <name>ChatterEnvVoidedText__c</name>
+    </fields>
+    <fields>
+        <label>エンベロープ無効化済み通信</label>
+        <name>ChatterEnvVoided__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Links Envelope Signing --></label>
+        <name>ChatterEnvelopeSigning__c</name>
+    </fields>
+    <fields>
+        <label>受信者完了済み通信テキスト</label>
+        <name>ChatterRecipCompletedText__c</name>
+    </fields>
+    <fields>
+        <label>受信者完了済み通信</label>
+        <name>ChatterRecipCompleted__c</name>
+    </fields>
+    <fields>
+        <label>受信者却下済み通信テキスト</label>
+        <name>ChatterRecipDeclinedText__c</name>
+    </fields>
+    <fields>
+        <label>受信者却下済み通信</label>
+        <name>ChatterRecipDeclined__c</name>
+    </fields>
+    <fields>
+        <label>受信者配信済み通信テキスト</label>
+        <name>ChatterRecipDeliveredText__c</name>
+    </fields>
+    <fields>
+        <label>受信者配信済み通信</label>
+        <name>ChatterRecipDelivered__c</name>
+    </fields>
+    <fields>
+        <help><!-- t --></help>
+        <label>受信者送信済み通信テキスト</label>
+        <name>ChatterRecipSentText__c</name>
+    </fields>
+    <fields>
+        <label>受信者送信済み通信</label>
+        <name>ChatterRecipSent__c</name>
+    </fields>
+    <fields>
+        <label>受信者署名済み通信テキスト</label>
+        <name>ChatterRecipSignedText__c</name>
+    </fields>
+    <fields>
+        <label>受信者署名済み通信</label>
+        <name>ChatterRecipSigned__c</name>
+    </fields>
+    <fields>
+        <label>通信設定</label>
+        <name>ChatterSetting__c</name>
+    </fields>
+    <fields>
+        <label>DocuSign Pro SF パスワード</label>
+        <name>DSProSFPassword__c</name>
+    </fields>
+    <fields>
+        <label>DocuSign Pro SF ユーザー名</label>
+        <name>DSProSFUsername__c</name>
+    </fields>
+    <fields>
+        <label>デフォルトの有効期限日数</label>
+        <name>DefaultExpireNDays__c</name>
+    </fields>
+    <fields>
+        <label>デフォルトのリマインダ日数</label>
+        <name>DefaultReminderNDays__c</name>
+    </fields>
+    <fields>
+        <label>デフォルトのリマインダ繰り返し日数</label>
+        <name>DefaultRepeatReminderNDays__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient role names that correspond with the recipient role values when sending with DocuSign. --></help>
+        <label>デフォルトの役割名</label>
+        <name>DefaultRoleNames__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient role values that correspond with the recipient role names when sending with DocuSign --></help>
+        <label>デフォルトの役割値</label>
+        <name>DefaultRoleValues__c</name>
+    </fields>
+    <fields>
+        <label>デフォルトの期限切れの警告日数</label>
+        <name>DefaultWarnOfExpireNDays__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Apex Timeout --></label>
+        <name>Default_Apex_Timeout__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set the DocuSign InPerson signing page to display in its own window rather than embedded inside of the Salesforce header and/or sidebar. --></help>
+        <label>独自のウィンドウで直接署名ページを表示</label>
+        <name>DisplayInPersonSigningInOwnWindow__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set the DocuSign tagger to display in its own window rather than embedded inside of the Salesforce header and/or sidebar. --></help>
+        <label>独自のウィンドウでタグ付けを表示</label>
+        <name>DisplayTaggerInOwnWindow__c</name>
+    </fields>
+    <fields>
+        <label>DocuSign ベース URL</label>
+        <name>DocuSignBaseURL__c</name>
+    </fields>
+    <fields>
+        <label>DocuSign 環境</label>
+        <name>DocuSignEnvironment__c</name>
+        <picklistValues>
+            <masterLabel>demo</masterLabel>
+            <translation><!-- demo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>preview</masterLabel>
+            <translation><!-- preview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>production</masterLabel>
+            <translation><!-- production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>stage</masterLabel>
+            <translation><!-- stage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>test</masterLabel>
+            <translation><!-- test --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>電子メールの本文</label>
+        <name>EmailBody__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_de</label>
+        <name>EmailBody_de__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_es</label>
+        <name>EmailBody_es__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_fr</label>
+        <name>EmailBody_fr__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_it</label>
+        <name>EmailBody_it__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_ja</label>
+        <name>EmailBody_ja__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_ko</label>
+        <name>EmailBody_ko__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_nl</label>
+        <name>EmailBody_nl__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_pt_BR</label>
+        <name>EmailBody_pt_BR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_ru</label>
+        <name>EmailBody_ru__c</name>
+    </fields>
+    <fields>
+        <help><!-- Edit this Email Message Text (up to 2,000 characters) and it will appear in the notification to sign for your DocuSign Recipient. --></help>
+        <label>EmailBody_zh_CN</label>
+        <name>EmailBody_zh_CN__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>電子メールの件名</label>
+        <name>EmailSubject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_de</label>
+        <name>EmailSubject_de__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_es</label>
+        <name>EmailSubject_es__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_fr</label>
+        <name>EmailSubject_fr__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_it</label>
+        <name>EmailSubject_it__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_ja</label>
+        <name>EmailSubject_ja__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_ko</label>
+        <name>EmailSubject_ko__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_nl</label>
+        <name>EmailSubject_nl__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_pt_BR</label>
+        <name>EmailSubject_pt_BR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_ru</label>
+        <name>EmailSubject_ru__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change this default Email Subject text and it will appear as the Subject Line in the notification to Sign for your DocuSign Recipients. --></help>
+        <label>EmailSubject_zh_CN</label>
+        <name>EmailSubject_zh_CN__c</name>
+    </fields>
+    <fields>
+        <label>新規モバイルのタグ付け UI を有効化する</label>
+        <name>EnableNewMobileTaggingUI__c</name>
+    </fields>
+    <fields>
+        <help><!-- Supports large DocuSign envelopes by sending envelopes to DocuSign without document data and allowing DocuSign to fetch document data as needed. Turn on only if sending envelopes exceeds Salesforce callout limits. --></help>
+        <label>文書の取得</label>
+        <name>FetchDocuments__c</name>
+    </fields>
+    <fields>
+        <label>Chatter を非表示にする</label>
+        <name>HideChatter__c</name>
+    </fields>
+    <fields>
+        <label>電子メールメッセージを非表示にする</label>
+        <name>HideEmailMessage__c</name>
+    </fields>
+    <fields>
+        <label>電子メールの件名を非表示にする</label>
+        <name>HideEmailSubject__c</name>
+    </fields>
+    <fields>
+        <label>リマインダと有効期限を非表示にする</label>
+        <name>HideRemindExpire__c</name>
+    </fields>
+    <fields>
+        <label>[今すぐ送信] ボタンを非表示にする</label>
+        <name>HideSendNowButton__c</name>
+    </fields>
+    <fields>
+        <label>[タグ] ボタンを非表示にする</label>
+        <name>HideTagButton__c</name>
+    </fields>
+    <fields>
+        <label>デフォルトのアンカータブを含める</label>
+        <name>IncludeDefaultAnchorTabs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client side logging --></label>
+        <name>Lightning_Component_Logging__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add attached Files to envelopes --></label>
+        <name>LoadFiles__c</name>
+    </fields>
+    <fields>
+        <label>ユーザーを検索する</label>
+        <name>LookupUser__c</name>
+        <relationshipLabel>DocuSign アカウント設定</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ユーザーフィールドの管理</label>
+        <name>ManageUsersFields__c</name>
+    </fields>
+    <fields>
+        <label>組織 ID</label>
+        <name>OrganizationId__c</name>
+    </fields>
+    <fields>
+        <label>セットアップの完了</label>
+        <name>SetupDone__c</name>
+    </fields>
+    <fields>
+        <label>ヘルパーをアップグレードする</label>
+        <name>UpgradeHelper__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enabling Reminder and Expiration Settings allows you to specify reminder and expiration defaults in DocuSign for Salesforce. These settings override the default Reminders &amp; Expirations settings from your DocuSign account. --></help>
+        <label>アカウント通知のデフォルトの使用</label>
+        <name>UseAccountNotificationDefaults__c</name>
+    </fields>
+    <fields>
+        <label>代理送信の使用</label>
+        <name>UseSendOnBehalfOf__c</name>
+    </fields>
+    <layouts>
+        <layout>DocuSignAccountConfiguration Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>DocuSign アカウント設定</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,256 @@
+<apex:page controller="SendEmailtoCustomers" showHeader="false" sidebar="false">
+    
+   
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/jquery.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.jqueryui.min.js')}"/>
+
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/jquery.dataTables.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.bootstrap.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.bootstrap4.min.js')}"/>
+    
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.foundation.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.material.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.uikit.min.js')}"/>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/jquery.dataTables.min.css')}"/>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/jquery.dataTables.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/dataTables.material.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/dataTables.jqueryui.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/dataTables.foundation.min.css')}"/>
+    <script>
+        $( document ).ready(function() {
+          
+            
+            $(document).on('change', '.mainCKB', function() {
+                if(this.checked) {
+                    var aa = document.querySelectorAll("input[type=checkbox]");
+                    for (var i = 0; i < aa.length; i++){
+                        aa[i].checked = true;
+                    }
+                }
+                else {
+                    
+                    var aa = document.querySelectorAll("input[type=checkbox]");
+                    for (var i = 0; i < aa.length; i++){
+                        aa[i].checked = false;
+                    }
+                }
+            });
+            });
+    </script>
+    <script>
+       function test() {
+         
+         searchCustomers();  
+       }
+       function sendEmail() {
+           
+           var isChecked = false;
+           var aa = document.querySelectorAll("input[type=checkbox]");
+           for (var i = 0; i < aa.length; i++) {
+           
+                if( aa[i].checked == true ) {
+                    
+                    isChecked = true;      
+                }
+           }
+           if( isChecked ) {
+               
+              sendEmailtoCust();
+           } else {
+               
+               alert('Please select at least a customer before sending email');
+           }
+       }
+       function selectAllCustomer() {
+           
+           var aa = document.querySelectorAll("input[type=checkbox]");
+           for (var i = 0; i < aa.length; i++) {
+           
+               $(aa).prop( 'checked', true );
+    
+           }
+       }
+
+       
+    </script>
+    <style>
+   
+    body {
+        
+        padding-top: 50px; 
+        padding-left:10%;
+        padding-right:10%;
+        background-image:url("{!URLFOR($Resource.SiteBackgroundImage)}");  
+    }
+     .apexp .bPageBlock.apexDefaultPageBlock .pbBody {
+         
+         margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+     }
+     .pbSubheader {
+         
+         background-color:teal;
+     }
+        .pbBody {
+            
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            //background-color: aliceblue;
+        }
+        .apexp{
+            
+            width:100%;
+             margin-top: 20px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+         .navbar-fixed-bottom, .navbar-fixed-top {
+            
+            position:initial;
+        }
+       
+        tr {
+            height:45px;
+        }
+        td {
+            top:8px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        #resultPanel th {
+        
+            text-align:center;
+            background-color:#e6e6e6;
+        }
+        #resultPanel table, td, th {
+            border: 1px solid black;
+            text-align:center;
+        }
+       
+       
+    </style>
+     <c:SendEmailtoCustomers_Header ></c:SendEmailtoCustomers_Header>
+    <apex:form id="frm">
+        
+        <apex:pageblock >
+        
+            <apex:pageBlockSection title="Search Customers"   >
+           
+       
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="New/Existing Customers"/>
+                <apex:selectList id="cusType" size="1" value="{!selCustType}" style="width:200px;">
+                    <apex:selectOptions value="{!customerType}"/>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+            
+            
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Select Sales Rep"/>
+                <apex:selectList id="EamilTepName" size="1" value="{!selSalesRep}" style="width:200px;">
+                    <apex:selectOptions value="{!salesRepList}"></apex:selectOptions>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+ 
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Product" for="ProdName"/>
+                <apex:selectList id="ProdName" size="1" value="{!selProdName}" style="width:200px;">
+                    <apex:selectOptions value="{!productList}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Email Template" />
+                <apex:selectList id="EamilTepName" size="1" value="{!selEmailTepValue}" style="width:200px;">
+                    <apex:selectOptions value="{!EmailTemplateList}"></apex:selectOptions>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                 <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Show Range"/>
+                <apex:selectList id="showCust" size="1" value="{!selShowRangeVal}" style="width:200px;">
+                    <apex:selectOptions value="{!showRangeList}"></apex:selectOptions>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Number of Records to display"/>
+                <apex:selectList id="NoOfRecds" size="1" value="{!selNoOfRecords}" style="width:200px;">
+                    <apex:selectOptions value="{!noofRecordsToDisplay}"></apex:selectOptions>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+                 
+        </apex:pageBlockSection>    
+        <center> 
+            <input type="button" value="Search" style ="margin-bottom:10px;" onClick="test();"/>
+            <input type="button" value="Cancel" onClick="cancelSearch();" />
+        </center>
+          
+        </apex:pageblock>
+        <apex:outputPanel style="margin-top:400px;" id="resultPanel1"  rendered="{!showResult}">
+        <apex:pageblock >
+             <center> 
+                 <div style="margin-top:5px;margin-bottom:5px;">
+                    <input type="button" value="Send an Email"  onClick="sendEmail();"/>
+                    <input type="button" value="Select All" onClick="selectAllCustomer();" />
+                </div>
+             </center>
+             <apex:pageBlockSection columns="1" title="Results" rendered="{!showResult}" />
+            
+            
+                <center><table width="100%" id="resultPanel" style="border:1px;margin-top:5px; " >
+                <th style="text-align:center;width:25px;"><input type="Checkbox" class="mainCKB" /></th>
+                <th style="text-align:center;">Cutsomer Name</th>
+                <th style="text-align:center;">Phone</th>
+                <th style="text-align:center;">Email</th>
+                <th style="text-align:center;">Customer Type</th>
+                <th style="text-align:center;">Created By</th>
+                <th style="text-align:center;">Created Date</th>
+                <apex:repeat value="{!customersList}" var="custRec">
+                    
+                    <tr>
+                        <td>
+                            <apex:inputCheckbox value="{!custRec.isSelected}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!custRec.customerName}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!custRec.customerPhone}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!custRec.customerEmail}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!custRec.customerType}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!custRec.createdbyName}"/>
+                        </td>
+                        
+                        <td>
+                            <apex:outputtext value="{0, date, short}">
+                                <apex:param value="{!custRec.cusCreatedDate}"></apex:param>
+                            </apex:outputtext>
+                            
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </table></center>
+        
+            </apex:pageblock>
+        </apex:outputPanel>
+         <apex:actionFunction action="{!searchCustomers}" name="searchCustomers"  reRender="frm, resultPanel1, resultPanel2"/>
+         <apex:actionFunction action="{!sendEmailtoCustomers}" name="sendEmailtoCust" oncomplete="alert('Email sent to customers successfully.');" reRender="frm, resultPanel1, resultPanel2"/>
+    </apex:form>
+    <c:SendEmailtoCustomers_Footer />
+</apex:page>

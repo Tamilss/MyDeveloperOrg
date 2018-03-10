@@ -1,0 +1,3 @@
+<apex:page id="thePage" standardController="Account" showHeader="false" sideBar="false">
+    <c:CaptureImageComponent ParentId="{!Account.Id}"/>     
+</apex:page>

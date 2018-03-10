@@ -1,0 +1,120 @@
+<apex:page controller="SKYP.ImageCaptureAdminCtrl" > <!-- sidebar="false" showheader="false" -->
+
+    <c:ImageCaptureAdminResources />
+        
+    <div class="container">
+        <div class="hero-unit header-title">
+            <apex:image styleClass="logo" value="{!$Resource.SKYP__IC_Logo}"/>
+            <h4>SP Images Administration</h4><br/><br/>
+            <span class="sub-title">Please select Object to create Image Capture application section.</span>
+       </div>
+    </div>  
+    
+    <apex:form styleClass="form-horizontal">    
+        
+        <apex:actionFunction name="generatePage" 
+                             action="{!generatePage}" 
+                             rerender="objectListPanel, errorsMessagesOutput"
+                             oncomplete="manageMessage();"> 
+            <apex:param name="objectAPIName" value="" />
+        </apex:actionFunction>
+        
+        <apex:actionFunction name="getObjectsPagesList" 
+                             action="{!getObjectsPagesList}" 
+                             rerender="objectListPanel"> 
+            <apex:param name="objectLabelSubstring" value=""/>
+        </apex:actionFunction>
+        
+        
+        <div class="container form-container">      
+            <div>
+                <div class="control-group">
+                    <label class="control-label">Find Object&nbsp;</label>
+                    <input id="filter-name" type="text" onkeyup="getObjectsPagesListJS(this.value);"></input>
+                </div>
+                <div class="errorMessageSection alert hide">
+                    <apex:outputText id="errorsMessagesOutput" value="{!errorsMessages}" escape="false"></apex:outputText>
+                </div>
+                
+                <apex:outputPanel id="objectListPanel">
+                    <apex:outputPanel rendered="{!if(objectsPagesList.size == 0, true, false)}">
+                        <span class="no-found">
+                            No Object found.
+                        </span>
+                    </apex:outputPanel>
+                    <div class="table-object-container {!if(objectsPagesList.size == 0, 'hide', '')}">
+                        <apex:outputPanel rendered="{!if(objectsPagesList.size == 0, false, true)}">
+                            <div id="wait-panel" class="wait hide">
+                                <apex:image value="{!$Resource.SKYP__wait}" width="20" height="20"/>
+                            </div>
+                            <table class="table-objects">
+                                <tr>
+                                    <th>
+                                        Object Name 
+                                    </th>
+                                    <th>
+                                        API Name
+                                    </th>
+                                    <th>
+                                        Page Name
+                                    </th>
+                                    <th>
+                                        Object Type
+                                    </th>
+                                </tr>
+                                <apex:repeat value="{!objectsPagesList}" var="objectPage">
+                                    <tr>
+                                        <td>
+                                            {!objectPage.ObjectLabel}
+                                        </td>
+                                        <td>
+                                            {!objectPage.Object_API_Name}
+                                        </td>
+                                        <td>
+                                            {!objectPage.ObjectDinamicPageName}
+                                            <label class="createIt {!IF(ISNULL(objectPage.ObjectDinamicPageName),'', 'hide')}" title="It will create {!SUBSTITUTE(SUBSTITUTE(objectPage.Object_API_Name, '__c',''),'_','')}CaptureSection"
+                                                   onclick="generatePageJS('{!SUBSTITUTE(SUBSTITUTE(objectPage.Object_API_Name, '__c',''),'_','')}', '{!objectPage.Object_API_Name}');">
+                                                Create Capture Section
+                                            </label> 
+                                        </td>
+                                        <td>
+                                            {!objectPage.Standard}
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+                            </table>
+                        </apex:outputPanel>
+                        
+                        
+                    </div>      
+                 </apex:outputPanel>    
+            </div>  
+        </div>
+    </apex:form>    
+    
+    <style>
+        .admin-footer{
+            display: block;
+            -webkit-margin-before: 1em;
+            -webkit-margin-after: 1em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            margin-bottom: 0;
+            color: #777;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+        }
+        
+        .admin-footer a{
+            color: #0088cc;
+            text-decoration: none;          
+        }
+    </style>    
+        
+    <div class="admin-footer">
+        Developed by <a href="http://www.theskyplanner.com" target="_blank">SkyPlanner LLC</a>      
+    </div>
+    
+</apex:page>

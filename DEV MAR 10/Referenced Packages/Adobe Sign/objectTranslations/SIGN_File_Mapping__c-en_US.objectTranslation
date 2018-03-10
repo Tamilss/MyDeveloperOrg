@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign File Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign File Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Disable --></label>
+        <name>Disable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Index --></label>
+        <name>Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Map on Events --></label>
+        <name>Map_on_Events__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled / Declined</masterLabel>
+            <translation><!-- Cancelled / Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out for Approval</masterLabel>
+            <translation><!-- Out for Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out for Signature</masterLabel>
+            <translation><!-- Out for Signature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signed</masterLabel>
+            <translation><!-- Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Counter-Approval</masterLabel>
+            <translation><!-- Waiting for Counter-Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Counter-Signature</masterLabel>
+            <translation><!-- Waiting for Counter-Signature --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- EchoSign Object Mapping --></label>
+        <name>SIGN_Object_Mapping__c</name>
+        <relationshipLabel><!-- EchoSign File Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Source Type --></label>
+        <name>Source_Type__c</name>
+        <picklistValues>
+            <masterLabel>Audit Trail</masterLabel>
+            <translation><!-- Audit Trail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signed Agreement - Merged PDF</masterLabel>
+            <translation><!-- Signed Agreement - Merged PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signed Agreement - Separate PDFs</masterLabel>
+            <translation><!-- Signed Agreement - Separate PDFs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supporting Documents</masterLabel>
+            <translation><!-- Supporting Documents --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target Salesforce Field --></label>
+        <name>Target_Field_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Type --></label>
+        <name>Target_Type__c</name>
+        <picklistValues>
+            <masterLabel>Add a reference link to the file</masterLabel>
+            <translation><!-- Add a reference link to the file --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attach file directly to object</masterLabel>
+            <translation><!-- Attach file directly to object --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>EchoSign File Mapping Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,9 @@
+<apex:page showheader="true" standardController="Account" recordSetVar="accounts"  >
+<head>
+    <apex:includeScript value="{!URLFOR($Resource.jquery, '/js/jquery-1.4.2.min.js')}"  />
+</head>
+<body>
+    <apex:enhancedList type="Lead" height="300" rowsPerPage="25"
+        id="LeadList" customizable="False" />
+</body>
+</apex:page>

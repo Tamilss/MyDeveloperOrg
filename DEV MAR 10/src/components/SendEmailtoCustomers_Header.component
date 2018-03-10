@@ -1,0 +1,77 @@
+<apex:component controller="SendEmailtoCustomers" >
+  <apex:includeScript value="{!URLFOR($Resource.Jquery_NAV_BAR, 'Jquery_NAV_BAR/jquery.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Jquery_NAV_BAR, 'Jquery_NAV_BAR2/bootstrap.min.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.Jquery_NAV_BAR, 'Jquery_NAV_BAR/bootstrap.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.Jquery_NAV_BAR, 'Jquery_NAV_BAR/logo-nav.css')}"/>
+   <head>
+
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+    
+        <title>Logo Nav - Start Bootstrap Template</title>
+    
+      
+
+    </head>
+    
+    <style>
+        
+          .navbar-fixed-bottom, .navbar-fixed-top {
+            
+            position:initial;
+        }
+        .navbar-inverse {
+            background-color: saddlebrown;
+            
+        }
+        .container {
+            width:93%;
+        }
+       
+    </style>
+    <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="https://blog.xamarin.com/wp-content/uploads/2013/07/salesforce-logo-635-300x189.jpg" style="width:120px;height:60px;"/>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                     <li>
+                        <a href="/apex/SendEmailtoCustomers">Send Email</a>
+                    </li>
+                    <li>
+                        <a href="/apex/DIsplayOrders">Orders</a>
+                    </li>
+                    <li>
+                        <a href="/apex/CreateNewContact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/apex/DisplayOpenActivity">Open Activity</a>
+                    </li>
+                     <li>
+                        Logged As 
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    </body>
+</apex:component>

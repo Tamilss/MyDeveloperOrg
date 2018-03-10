@@ -1,0 +1,12 @@
+<apex:page >
+   <apex:form >
+  <apex:iframe height="50%" frameborder="true" scrolling="true" width="50%"> 
+      <apex:outputLabel for="NameFld" value="Enter Name">
+      </apex:outputLabel>
+      <apex:inputText id="NameFld"/>
+      <div>
+          HAI!
+      </div>
+  </apex:iframe> 
+  </apex:form>
+</apex:page>

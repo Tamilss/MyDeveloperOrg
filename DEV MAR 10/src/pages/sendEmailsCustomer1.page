@@ -1,0 +1,137 @@
+<apex:page controller="SendEmailtoCustomers" showHeader="false" sidebar="false">
+    
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/jquery.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.jqueryui.min.js')}"/>
+
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/jquery.dataTables.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.bootstrap.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.bootstrap4.min.js')}"/>
+    
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.foundation.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.material.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/js/dataTables.uikit.min.js')}"/>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/jquery.dataTables.min.css')}"/>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/jquery.dataTables.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/dataTables.material.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/dataTables.jqueryui.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'DataTables-1.10.12/media/css/dataTables.foundation.min.css')}"/>
+   
+    <script>
+       function test() {
+         
+         searchCustomers();  
+       }
+        
+
+       
+    </script>
+    <apex:form >
+
+        <apex:pageblock >
+        
+            <apex:pageBlockSection title="Search Customers" >
+           
+       
+            
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="New/Existing Customers"/>
+                <apex:selectList id="cusType" size="1" value="{!selCustType}">
+                    <apex:selectOptions value="{!customerType}"/>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+            
+            
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Select Sales Rep"/>
+                <apex:selectList id="EamilTepName" size="1" value="{!selSalesRep}">
+                    <apex:selectOptions value="{!salesRepList}"></apex:selectOptions>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+            
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Show Range"/>
+                <apex:selectList id="showCust" size="1" value="{!selShowRangeVal}">
+                    <apex:selectOptions value="{!showRangeList}"></apex:selectOptions>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Number of Records to display"/>
+                <apex:selectList id="NoOfRecds" size="1" value="{!selNoOfRecords}">
+                    <apex:selectOptions value="{!noofRecordsToDisplay}"></apex:selectOptions>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <input type="button" value="Search" onClick="test();"/>
+            <apex:commandButton value="Cancel" onclick="stopSearch();"/>
+        
+        <apex:pageBlockSection columns="1" title="Results" >
+            
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Select Product" for="ProdName"/>
+                <apex:selectList id="ProdName" size="1" value="{!selProdName}">
+                    <apex:selectOptions value="{!productList}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            
+             <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Select a Email Template" />
+                <apex:selectList id="EamilTepName" size="1" value="{!selEmailTepValue}">
+                    <apex:selectOptions value="{!EmailTemplateList}"></apex:selectOptions>
+                </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+        </apex:pageBlockSection>    
+        
+        <apex:pageBlockSection columns="1" title="Results" >
+        
+        
+        
+       <apex:pageBlockTable id="resultTable"  value="{!customersList}" var="custRec" >
+           <apex:column headerValue="Action" >
+               <apex:inputCheckbox value="{!custRec.isSelected}"/>
+           </apex:column>
+           <apex:column headerValue="Cutsomer Name" title="" value="{!custRec.customerName}"/>
+           <apex:column headerValue="Phone" value="{!custRec.customerPhone}"/>
+           <apex:column headerValue="Email" value="{!custRec.customerEmail}"/>
+           <apex:column headerValue="Customer Type" value="{!custRec.customerType}"/>
+           <apex:column headerValue="Created Date" value="{!custRec.cusCreatedDate}"/>
+           
+         </apex:pageBlockTable> 
+        </apex:pageBlockSection>
+        </apex:pageblock>
+        
+        <!--<table class="resultTable">
+            <apex:repeat value="{!customersList}" var="custRec">
+                
+                <tr>
+                    <td>
+                        <apex:inputCheckbox value="{!custRec.isSelected}"/>
+                    </td>
+                    <td>
+                        <apex:outputText value="{!custRec.customerName}"/>
+                    </td>
+                    <td>
+                        <apex:inputCheckbox value="{!custRec.isSelected}"/>
+                    </td>
+                    <td>
+                        <apex:inputCheckbox value="{!custRec.isSelected}"/>
+                    </td>
+                    <td>
+                        <apex:inputCheckbox value="{!custRec.isSelected}"/>
+                    </td>
+                    <td>
+                        <apex:inputCheckbox value="{!custRec.isSelected}"/>
+                    </td>
+                </tr>
+            </apex:repeat>
+        </table>-->
+         <apex:actionFunction action="{!searchCustomers}" name="searchCustomers" reRender="resultTable"/>
+    </apex:form>
+   
+ 
+</apex:page>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign Object Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign Object Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Display Label --></label>
+        <name>Display_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field API Name --></label>
+        <name>Field_API_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fully Qualified API --></label>
+        <name>Fully_Qualified_API__c</name>
+    </fields>
+    <fields>
+        <label><!-- EchoSign Data Mapping --></label>
+        <name>SIGN_Data_Mapping__c</name>
+        <relationshipLabel><!-- EchoSign Object Mappings --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Process Operation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

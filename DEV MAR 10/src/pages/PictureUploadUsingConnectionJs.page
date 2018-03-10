@@ -1,0 +1,190 @@
+<apex:page standardController="Account" extensions="PatientPictureUploadController" id="page">
+
+  <apex:includeScript value="{!URLFOR($Resource.PhotoUpload, 'PhotoUpload/jquery.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.PhotoUpload, 'PhotoUpload/jquery.blockUI.js')}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script type="text/javascript">__sfdcSessionId = '{!$Api.Session_Id}';</script>
+  <script src="../../soap/ajax/27.0/connection.js" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+    var maxStringSize = 6000000;    //Maximum String size is 6,000,000 characters
+    var maxFileSize = 4350000;      //After Base64 Encoding, this is the max file size
+    var chunkSize = 950000;         //Maximum Javascript Remoting message size is 1,000,000 characters
+    var attachment;
+    var attachmentName;
+    var fileSize;
+    var positionIndex;
+    var doneUploading;
+    
+    dispAttachment();
+    function reloadPage() {
+        
+        window.location.reset();
+    }
+    function uploadFile() {
+        
+        var error = false;
+        var fileType = ['image/jpeg', 'image/pjpeg', 'image/png', 'image/x-png', 'image/gif'];
+        var file = document.getElementById('attachmentFile').files[0];
+        if( fileType.indexOf( file.type ) != -1 ) {
+        
+            var file = document.getElementById('attachmentFile').files[0];
+            if(file != undefined) {
+             
+                if(file.size <= maxFileSize) {
+            
+                    attachmentName = file.name;
+                    var fileReader = new FileReader();
+                    fileReader.onloadend = function(e) {
+                    
+                        attachment = window.btoa(this.result);  //Base 64 encode the file before sending it
+                        positionIndex=0;
+                        fileSize = attachment.length;
+                        console.log("Total Attachment Length: " + fileSize);
+                        doneUploading = false;
+                        
+                        if(fileSize > maxStringSize) {
+                        
+                          alert("Base 64 Encoded file is too large. Maximum size is " + maxStringSize + " your file is " + fileSize + ".");
+                          error = true;
+                        }
+                    }
+                    fileReader.onerror = function(e) {
+                    
+                        alert("There was an error reading the file. Please try again.");
+                        error = true;
+                    }
+                    fileReader.onabort = function(e) {
+                        alert("There was an error reading the file. Please try again.");
+                        error = true;
+                    }
+                    fileReader.readAsBinaryString(file);  //Read the body of the file
+             
+                } else {
+                  alert("File must be under 4.3 MB in size. Your file is too large.");
+                  error = true;
+                }
+            } else {
+                alert("You must choose a file before trying to upload it");
+                error = true;
+            }
+        } else {
+            
+            alert('Please upload a valid Image file');
+            error = true;
+        }
+        alert(error);
+        if( error == false ) {
+            alert('att insert');
+            var attachments = new sforce.SObject("Attachment");
+            attachments.Name = 'Contact Picture';
+            attachments.ParentId = '{!Account.Id}';
+            attachments.Body = attachment;
+            attachments.ContentType = file.type;
+            //var newRecords = new Array();
+            //newRecords.push(attachment);
+            var delResult = sforce.connection.create([attachments]);
+             alert('here2');
+              if (delResult[0].getBoolean("success")) {
+                alert('Inserted' );
+                $('#conPhoto').attr('src', 'data:image/png;base64,'+attachment);
+                $.unblockUI();
+                document.getElementById('conPhoto').reset();
+                document.getElementById('attachmentFile').reset();
+                window.location.reload();
+              } else {
+                alert('failed');
+              }
+        }
+    }
+    function uploadAttachment(fileId) {
+    
+      var attachmentBody = "";
+      if(fileSize <= positionIndex + chunkSize) {
+        attachmentBody = attachment.substring(positionIndex);
+        doneUploading = true;
+      } else {
+        attachmentBody = attachment.substring(positionIndex, positionIndex + chunkSize);
+      }
+      PatientPictureUploadController.doUploadAttachment(
+      '{!Account.Id}', attachmentBody, attachmentName, fileId, 
+        function(result, event) {
+        
+           if(event.status) {
+           
+            if(result.substring(0,3) == '00P') {
+            
+              if(doneUploading == true) {
+                //window.open("/{!Account.Id}", "_blank");
+                //window.location.reload();
+               // $('#conPhoto').attr('src', 'data:image/png;base64,'+attachment);
+                $.unblockUI();
+                document.getElementById('conPhoto').reset();
+                document.getElementById('attachmentFile').reset();
+                window.location.reload();
+                
+              } else {
+                positionIndex += chunkSize;
+                uploadAttachment(result);
+              }
+            }
+          } else {
+            alert(event.message);
+          }
+          
+        },
+        {buffer: true, escape: true, timeout: 120000}
+        
+      );
+    }
+    
+    
+      function dispAttachment() {
+        
+        PatientPictureUploadController.getAttachmentBlob(
+        '{!Account.Id}', 
+        function(result, event) {
+            
+            if(event.status) {
+                
+                var filesrc;
+                if( result != null ) {
+                
+                    filesrc = '/servlet/servlet.FileDownload?file='+result;
+                } else {
+                    
+                   filesrc ='/resource/1409667582000/Unknown';
+                }
+                
+                $('#conPhoto').attr('src', filesrc);
+                //document.getElementById('conPhoto').reset();
+                
+            } else {
+                alert(event.message);
+            }
+        });
+    }    
+  </script>
+ 
+  <div style="margin-left:10%"><h2>Patient Photo </h2></div>
+  <br /> <br />
+  <table style="margin-left:10%">
+      <tr>
+          <td width="12%">
+              <img id="conPhoto" height="100" width="100"/>
+          </td>
+          <td width="3%">
+          </td>
+          <td width="12%">
+              <b>1. Select the File :</b> <br />
+              <input type="file" accept="image/*" id="attachmentFile"/> <br />
+              <div style="margin-top:5px;"><b>2. Click Uploaad :</b> <br /></div>
+              <button onclick="uploadFile()" >Upload</button>
+              <button onclick="reloadPage()">Cancel</button>
+          </td>
+          <td width="73%">
+          </td>
+      </tr>
+  </table>
+</apex:page>

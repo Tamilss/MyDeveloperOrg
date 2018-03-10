@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- EchoSign Trigger --></value>
+    </caseValues>
+    <fields>
+        <label>契約書</label>
+        <name>Agreement__c</name>
+        <relationshipLabel>EchoSign トリガー</relationshipLabel>
+    </fields>
+    <fields>
+        <label>エラーメッセージ</label>
+        <name>Error_Message__c</name>
+    </fields>
+    <fields>
+        <label>非同期に処理</label>
+        <name>Process_Asynchronously__c</name>
+    </fields>
+    <fields>
+        <label>再試行回数</label>
+        <name>Retry_Count__c</name>
+    </fields>
+    <fields>
+        <label>ステータス</label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>EchoSign Trigger Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- EchoSign Trigger Name --></nameFieldLabel>
+</CustomObjectTranslation>

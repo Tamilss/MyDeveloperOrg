@@ -1,0 +1,76 @@
+<apex:page standardStylesheets="true" showHeader="false" sidebar="false">
+<apex:stylesheet value="/resource/SLDSv2/Assets/styles/salesforce-lightning-design-system.css" />
+ <!--<ltng:require styles="/resource/SLDS0101/assets/styles/salesforce-lightning-design-system-ltng.css" />
+    <ltng:require styles="{!$Resource.Lightning}"/>
+    <ltng:require styles="/resource/1515769768000/Lightning"/>-->
+    
+    <style>
+        .navbar-fixed-bottom, .navbar-fixed-top {
+            
+            position:initial;
+        }
+        .navbar-inverse {
+            background-color: saddlebrown;
+            
+        }
+        .container {
+            width:93%;
+        }
+    </style>
+    <apex:includeScript value="{!URLFOR($Resource.Jquery_NAV_BAR, 'Jquery_NAV_BAR/jquery.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Jquery_NAV_BAR, 'Jquery_NAV_BAR2/bootstrap.min.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.Jquery_NAV_BAR, 'Jquery_NAV_BAR/bootstrap.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.Jquery_NAV_BAR, 'Jquery_NAV_BAR/logo-nav.css')}"/>
+   <head>
+
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+    
+        <title>Logo Nav - Start Bootstrap Template</title>
+    
+      
+
+    </head>
+     <center>
+    <body>
+   
+    <!-- Navigation -->
+    <center><nav class="navbar navbar-inverse navbar-fixed-top" style="width:80%;align:center;" role="navigation">
+        <div class="container" width="93%">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="http://placehold.it/150x50&text=Logo" alt=""/>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/apex/SendEmailtoCustomers">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="/apex/CreateNewContact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    </center>
+    </body>
+    </center>
+</apex:page>

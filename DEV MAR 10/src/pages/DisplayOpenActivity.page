@@ -1,0 +1,110 @@
+<apex:page controller="SendEmailtoCustomers" showHeader="false" standardStylesheets="true" sidebar="false" >
+  
+  <style>
+     body {
+        
+        padding-top: 50px; 
+        padding-left:10%;
+        padding-right:10%;
+        background-image:url("{!URLFOR($Resource.SiteBackgroundImage)}");  
+    }
+     .apexp .bPageBlock.apexDefaultPageBlock .pbBody {
+         
+         margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+     }
+     .pbSubheader {
+         
+         background-color:teal;
+     }
+        .pbBody {
+            
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            //background-color: aliceblue;
+        }
+        .apexp{
+            
+            width:100%;
+             margin-top: 20px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+         .navbar-fixed-bottom, .navbar-fixed-top {
+            
+            position:initial;
+        }
+       
+        tr {
+            height:45px;
+        }
+        td {
+            top:8px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        #resultPanel th {
+        
+            text-align:center;
+            background-color:#e6e6e6;
+        }
+        #resultPanel table, td, th {
+            border: 1px solid black;
+            text-align:center;
+        }
+  </style>
+  <apex:form >
+  <c:SendEmailtoCustomers_Header ></c:SendEmailtoCustomers_Header>
+        <apex:pageblock >
+             
+             <apex:pageBlockSection columns="1" title="Open Activity"> </apex:pageBlockSection>
+            
+            
+                <table width="100%" id="resultPanel" style="border:1px;margin-top:5px; " >
+                <th style="text-align:center;">Subject</th>
+                <th style="text-align:center;">Customer Name</th>
+                <th style="text-align:center;">Due Date</th>
+                <th style="text-align:center;">Assign To</th>
+                <th style="text-align:center;">Created Date</th>
+                <apex:repeat value="{!openTaskList}" var="openAvty">
+                    
+                    <tr>
+                       
+                        <td>
+                            <apex:outputText value="{!openAvty.Subject}"/>
+                        </td>
+                       
+                         <td>
+                            <apex:outputText value="{!openAvty.Who.Name}"/>
+                        </td>
+                        <td>
+                            
+                            <apex:outputtext value="{0, date, short}">
+                                <apex:param value="{!openAvty.ActivityDate}"></apex:param>
+                            </apex:outputtext>
+                        </td>
+                        
+                        <td>
+                            <apex:outputText value="{!openAvty.Owner.Name}"/>
+                        </td>
+                       
+                        
+                        <td>
+                             <apex:outputtext value="{0, date, short}">
+                                <apex:param value="{!openAvty.CreatedDate}"></apex:param>
+                            </apex:outputtext>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </table>
+           
+            </apex:pageblock>
+        <c:SendEmailtoCustomers_Footer ></c:SendEmailtoCustomers_Footer>
+    </apex:form>
+</apex:page>

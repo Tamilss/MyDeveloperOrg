@@ -1,0 +1,32 @@
+<apex:page controller="AccountRemoter">
+<apex:includeScript value="/soap/ajax/17.0/connection.js"/> 
+<apex:includeScript value="/soap/ajax/17.0/apex.js"/>
+    <apex:form id="frm">
+    <script type="text/javascript">
+    
+    function getRemoteAccount() {
+        alert('hai');
+        
+        //sforce.connection.sessionId = "{!$Api.Session_ID}";
+        var contextUser = sforce.apex.execute("AccountRemoter","save",{});
+        alert('hai 1');
+    }
+    </script>
+
+    
+    <apex:commandButton value="save" onclick="getRemoteAccount()" reRender="frm"/>
+    <apex:outputLabel for="InpString" value="Enter string"/>
+    <apex:inputText id="InpString" value="{!name}"/>
+
+    <apex:pageBlock id="block">
+        <apex:pageBlockSection id="blockSection" columns="2">
+            <apex:pageBlockSectionItem id="firstItem">
+                <span id="remoteAcctId"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="secondItem">
+                <apex:outputText id="acctNumEmployees"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

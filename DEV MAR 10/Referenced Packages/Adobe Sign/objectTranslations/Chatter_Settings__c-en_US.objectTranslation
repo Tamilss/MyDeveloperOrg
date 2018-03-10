@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign Chatter Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign Chatter Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Post Chatter updates for EchoSign agreements on the related Account record. --></help>
+        <label><!-- Post on Account Record --></label>
+        <name>Account_Record_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is canceled. --></help>
+        <label><!-- Post when Agreement Canceled --></label>
+        <name>Agreement_Cancelled_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is declined. --></help>
+        <label><!-- Post when Agreement Declined --></label>
+        <name>Agreement_Declined_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement expires. --></help>
+        <label><!-- Post when Agreement Expires --></label>
+        <name>Agreement_Expired_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter updates for EchoSign agreements on the Agreement record. --></help>
+        <label><!-- Post on Agreement Record --></label>
+        <name>Agreement_Record_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when reminders are sent. --></help>
+        <label><!-- Post when Reminders Sent --></label>
+        <name>Agreement_Reminder_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is sent. --></help>
+        <label><!-- Post when Agreement Sent --></label>
+        <name>Agreement_Sent_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post private Chatter message to signer when an agreement needs the signer&apos;s signature. --></help>
+        <label><!-- Send Notifications to Sign Agreements --></label>
+        <name>Agreement_Sign_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is signed and approved. --></help>
+        <label><!-- Post when Agreement Signed or Approved --></label>
+        <name>Agreement_Signed_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when agreement is viewed. --></help>
+        <label><!-- Post when Agreement Viewed --></label>
+        <name>Agreement_Viewed_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter updates for EchoSign agreements on the related Contract record. --></help>
+        <label><!-- Post on Contract Record --></label>
+        <name>Contract_Record_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable this setting to turn on Chatter updates for EchoSign agreements. --></help>
+        <label><!-- Enable EchoSign Chatter Updates --></label>
+        <name>Enable_Chatter_Integration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter updates for EchoSign agreements on the related Opportunity record. --></help>
+        <label><!-- Post on Opportunity Record --></label>
+        <name>Opportunity_Record_Post__c</name>
+    </fields>
+    <fields>
+        <help><!-- Post Chatter update when recipient email bounces and is not delivered. --></help>
+        <label><!-- Post when Recipient Email Bounces --></label>
+        <name>Recipient_Email_Bounced_Post__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

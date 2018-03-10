@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign Toolbar Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign Toolbar Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Cancel Agreement --></label>
+        <name>Cancel_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancel (Draft) --></label>
+        <name>Cancel_Draft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delete Agreement --></label>
+        <name>Delete_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Agreement Review Logo --></label>
+        <name>Disable_Agreement_Review_Logo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable On Load Action --></label>
+        <name>Enable_On_Load_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Save Agreement --></label>
+        <name>Save_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Agreement --></label>
+        <name>Send_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Reminder --></label>
+        <name>Send_Reminder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Update Status --></label>
+        <name>Update_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- View Agreement --></label>
+        <name>View_Agreement__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

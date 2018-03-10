@@ -1,0 +1,80 @@
+<apex:page showHeader="false" controller="SalesforceLoginController">  
+    <head>
+    </head>
+    <style>
+         body {
+        
+        padding-top: 50px; 
+        padding-left:10%;
+        padding-right:10%;
+    }
+     .apexp .bPageBlock.apexDefaultPageBlock .pbBody {
+         
+         margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+     }
+     .pbSubheader {
+         
+         background-color:teal;
+     }
+        .pbBody {
+            
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            background-color: aliceblue;
+        }
+        .apexp{
+            
+            width:100%;
+             margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+         .navbar-fixed-bottom, .navbar-fixed-top {
+            
+            position:initial;
+        }
+        tr {
+            
+            height:25px;
+        }
+        input {
+            
+            margin-top:-4px;
+        }
+    </style>
+    <body>
+    <c:SendEmailtoCustomers_Header ></c:SendEmailtoCustomers_Header>
+        <apex:form >
+            
+             <apex:pageblock >
+            
+            <apex:outputPanel rendered="{!isError}">
+                <apex:outputLabel value="Error : " style="color:red;font-weight:bold;"/>{!errorMsg}
+            </apex:outputPanel>
+            <apex:pageBlockSection title="Search Customers"  >            
+            <table width="60%" style="margin-top:20px;">
+                <tr>
+                    <td>Username</td>
+                    <td><apex:inputText value="{!username}"/> </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><apex:inputSecret value="{!password}"/> </td>
+                </tr>
+                <tr>
+                     <apex:commandButton value="Login" action="{!login}"/>
+                </tr>
+            </table>
+           
+            </apex:pageblocksection>
+          </apex:pageBlock>
+        </apex:form>
+        <c:SendEmailtoCustomers_Footer ></c:SendEmailtoCustomers_Footer>
+    </body>
+</apex:page>

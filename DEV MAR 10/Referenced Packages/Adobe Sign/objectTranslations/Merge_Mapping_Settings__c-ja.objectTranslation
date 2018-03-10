@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- EchoSign Merge Mapping Settings --></value>
+    </caseValues>
+    <fields>
+        <help><!-- When an EchoSign merge mapping is used for an agreement, attach the merged document to the agreement record after the agreement is sent. --></help>
+        <label>結合文書を添付</label>
+        <name>Attach_Merged_Document__c</name>
+    </fields>
+    <fields>
+        <help><!-- When an EchoSign merge mapping is used for an agreement, remove the original template document from the agreement record after the agreement is sent. --></help>
+        <label>元の文書を削除</label>
+        <name>Remove_Original_Attachment__c</name>
+    </fields>
+</CustomObjectTranslation>

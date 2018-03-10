@@ -1,0 +1,12 @@
+<apex:page controller="VerticalBarchatController" showHeader="false" sidebar="false">
+
+    <apex:chart height="400" width="650"  data="{!months}">
+        <apex:axis type="Numeric" minimum="0"  position="left" fields="amount"
+                title="{!DispfieldName}"/>
+        <apex:axis type="Category" position="bottom" fields="yearMonth"
+                title="Year/Month"/>
+        <apex:barSeries orientation="vertical" axis="left"
+                xField="yearMonth" yField="amount"/>
+    </apex:chart>
+    
+</apex:page>

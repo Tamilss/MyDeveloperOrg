@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EchoSign Lead Conversion Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EchoSign Lead Conversion Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- When a Lead is converted to an Account, retain all previous agreements from the Lead with the Account record. --></help>
+        <label><!-- Account Retain Agreement --></label>
+        <name>Account_Retain_Agreement__c</name>
+    </fields>
+    <fields>
+        <help><!-- When a Lead is converted to an Contact, retain all previous agreements from the Lead with the Contact record. --></help>
+        <label><!-- Contact Retain Agreement --></label>
+        <name>Contact_Retain_Agreement__c</name>
+    </fields>
+    <fields>
+        <help><!-- When a Lead is converted to an Opportunity, retain all previous agreements from the Lead with the Opportunity record. --></help>
+        <label><!-- Opportunity Retain Agreement --></label>
+        <name>Opportunity_Retain_Agreement__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

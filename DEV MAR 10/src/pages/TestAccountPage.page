@@ -1,0 +1,18 @@
+<apex:page standardController="Account" extensions="TestAccountController" >
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageMessages />
+            <apex:pageBlockSection >
+                <apex:inputField value="{!account.Name}"/>
+                {if(5%5==1,true,false)}
+                <apex:inputField value="{!account.AccountNumber}" rendered="if( MATH.MOD(5,4) == 1,true,false)"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!saveAccount}" />
+                <apex:commandButton value="Edit" action="{!Edit}" />
+                <apex:commandButton value="CreateAccount" action="{!createAccount}"/>
+            </apex:pageBlockButtons>
+            <apex:inputFile accept=".xls,.doc" contentType="{!conType}" fileName="{!docName}" value="{!docBody}"></apex:inputFile>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- EchoSign Toolbar Settings --></value>
+    </caseValues>
+    <fields>
+        <label>契約書をキャンセル</label>
+        <name>Cancel_Agreement__c</name>
+    </fields>
+    <fields>
+        <label>取り消し (ドラフト)</label>
+        <name>Cancel_Draft__c</name>
+    </fields>
+    <fields>
+        <label>契約書を削除</label>
+        <name>Delete_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Agreement Review Logo --></label>
+        <name>Disable_Agreement_Review_Logo__c</name>
+    </fields>
+    <fields>
+        <label>読み込み時アクションを有効にする</label>
+        <name>Enable_On_Load_Action__c</name>
+    </fields>
+    <fields>
+        <label>契約を保存</label>
+        <name>Save_Agreement__c</name>
+    </fields>
+    <fields>
+        <label>契約を送信</label>
+        <name>Send_Agreement__c</name>
+    </fields>
+    <fields>
+        <label>リマインダーを送信</label>
+        <name>Send_Reminder__c</name>
+    </fields>
+    <fields>
+        <label>状況を更新</label>
+        <name>Update_Status__c</name>
+    </fields>
+    <fields>
+        <label>契約書を表示</label>
+        <name>View_Agreement__c</name>
+    </fields>
+</CustomObjectTranslation>
